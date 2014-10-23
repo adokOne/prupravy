@@ -1,0 +1,64 @@
+        cm:new Ext.grid.ColumnModel([
+            new Ext.grid.CheckboxSelectionModel(),
+        {
+	         header:"ID",
+	         dataIndex:'id',
+        },{
+		    header:'Заголовок',
+		    dataIndex:'news_name',
+		    width:200,
+		    sortable: true,
+	        renderer:renderSearch,
+		},{
+				    header:'Дата создания',
+				    dataIndex:'date',
+				    width:157,
+				    maxWidth:157,
+				    renderer:Ext.util.Format.dateRenderer('d.m.Y')
+           
+		},{
+			    header:'Добавил',
+			    dataIndex:'user',
+			    width:200,
+			    sortable: true,
+		        renderer:renderSearch,
+		},{
+	            header:'Тип',
+	            dataIndex:'type',
+	            width:130,
+	            align:'center',
+	            sortable:true,          
+	            renderer:function(val){
+	                if(val== 'base')
+	                    return '<span style="color:red">Новость</span>';
+	                else if(val== 'event')
+	                    return '<span style="color:red">Событие</span>';
+	                else if(val== 'photos')
+	                    return '<span style="color:red">Фотосъемка</span>';
+	                else
+	                    return '<span style="color:green">Телеграф</span>';
+	            }
+        },{
+            header:'Активна',
+            dataIndex:'status',
+            width:80,
+            align:'center',
+            sortable:true,
+           
+            renderer:function(val){
+                if (val*1 == 0)
+                    return '<span style="color:red">Нет</span>';
+                else
+                    return '<span style="color:green">Да</span>';
+            }
+        }]),
+        plugins:[new Ext.ux.grid.Search({
+                position:'top',
+                width: 180,
+                autoFocus:true,
+                listeners:{
+                    'search':function(){
+                        itemsStore.reload();
+                    }                
+                }
+        })],

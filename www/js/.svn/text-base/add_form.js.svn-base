@@ -1,0 +1,237 @@
+var err_off_top = 1000000;
+var error = false;
+		
+		
+$(function() {
+	
+	// quick search form init
+	
+	$('#airport_find_btn').click( function(){
+
+		var airport_code = $('#airport_code').val();
+		var auto_reg_code = $('#auto_reg_code').val();
+		
+		if( airport_code.length == 0 &&  auto_reg_code.length == 0 ){
+			alert( translate['fill_form_autofill'] );
+		}
+		
+		if( airport_code.length > 0  || auto_reg_code.length > 0){
+			$('#airport_find_btn').hide();
+			$('#airport_find_loader_img').show();
+			
+			$.ajax({
+				type: "POST",
+				url: '/posts/find_plane_data/',
+				data: { 'airport_code' : airport_code,
+						'reg_code': auto_reg_code },
+				dataType: 'json',
+				success: function(responce){
+					$('#airport_find_btn').show();
+					$('#airport_find_loader_img').hide();
+					
+					if(responce.success){
+						alert(responce.msg);
+						
+						if( responce.country_id ){
+							$('#country').val( responce.country_id );
+							
+							$('#country').unselectbox();
+							$('#country').selectbox();
+							$('#country').change( reload_countries );
+							$('#country').change();
+							
+							$('#airport').val( responce.airport_id )
+							$('#airport').unselectbox();
+							$('#airport').selectbox();
+						}
+						
+						/*
+						tech_type	// ID Тип фотографии / видео 
+						plane		// ID Летательный аппарат
+						company		// ID Авиокомпания
+						reg_number	// TEXT Регистрационный номер null
+					--	reg_code	// TEXT Регистрационный код
+						serial		// TEXT Серийный номер
+						*/
+						
+						if(responce.tech_type){
+							$('#tech_type').val( responce.tech_type );
+							$('#tech_type').unselectbox();
+							$('#tech_type').selectbox();
+						}
+						
+						if(responce.plane){
+							$('#plane').val( responce.plane );
+							$('#plane').unselectbox();
+							$('#plane').selectbox();
+						}
+						
+						if(responce.company){
+							$('#company').val( responce.company );
+							$('#company').unselectbox();
+							$('#company').selectbox();
+						}
+						
+						if(responce.reg_number){
+							$('#reg_number').val(responce.reg_number);
+						}
+						
+						if(responce.serial){
+							$('#serial').val(responce.serial);
+						}
+						
+						
+						
+					} else {
+						if( responce.msg.length > 0 )
+							alert( responce.msg );
+						else
+							alert(  translate['Error'] );
+					}
+				},
+				error: function(msg){
+					//console.log(msg);
+					$('#airport_find_btn').show();
+					$('#airport_find_loader_img').hide();
+					alert('Error occured on server. Please try again.');
+				}
+			});
+		}
+		
+	});
+	
+	//  Photo submit form validation
+	$('#submit').click(function(ev){
+		error = false;
+		err_off_top = 1000000;
+		var h = $('html, body').height();
+		$('.error').remove();
+		
+		// Тип
+		if( $('#post_type').val().length < 1 ){
+			$('#post_type_li').prepend($('<p class="error">' + translate['select_file_type'] + '</p>'));
+			set_error_pos( $('#post_type_li') );
+		}
+		
+		// Файл
+		if( $('input:file').val() == "" ){
+			$('#upload_button_error').html($('<p class="error">' + translate['select_file'] + '</p>'));
+			set_error_pos( $('#post_type_li') );
+		}
+		
+		// если фото или видео
+		if( ( $("#post_type").val() == 'photos' || $("#post_type").val() == 'videos') )
+    	{
+			
+			// Тип фотографии / видео
+			if( $('#tech_type').val() == "" ){
+				$('#tech_type_li').prepend($('<p class="error">' + translate['select_media_type'] + '</p>'));
+				set_error_pos( $('#tech_type_li') );
+			}
+			
+			
+    		if( $("#tech_type").val() == '1' || $("#tech_type").val() == '2' )
+    		{
+    			//Летательный аппарат
+    			
+    			if( $('#plane').val() == "" && $('#custom-plane').val() == 0 ){
+    				$('#plane_li').prepend($('<p class="error">' + translate['select_object_type'] + '</p>'));
+    				set_error_pos( $('#plane_li') );
+    			}
+    			
+    			if( $('#custom-plane').val() == 1 ){
+    				//check required fields
+    				var req_fields = new Array( $('#plane_manufacture'), $('#plane_type'), $('#plane_modification') )  ;
+    				
+    				for( i in req_fields ){
+    					if( req_fields[i].val() == '' ){
+    						req_fields[i].parent('li').prepend( $('<p class="error">' + translate['required_field'] + '</p>') );
+    	    				set_error_pos( req_fields[i].parent('li') );
+    					}
+    				}
+    			}
+    			
+    			// Компания
+	    		if( $("#company").val()=='' && $('#new_company_custom_input').val() !== '' ){
+    				$('#company_li').prepend($('<p class="error">' + translate['select_company'] + '</p>'));
+	    			set_error_pos( $('#company_li') );	
+				}
+			}
+			
+			if( $("#place_selection_data").html() == "" ){
+				$('#place_selection_data_li').prepend($('<p class="error">' + translate['select_place'] + '</p>'));
+				set_error_pos( $('#place_selection_data_li') );
+			}
+		}
+		
+		if(error){
+		  $('html, body').animate({ scrollTop: err_off_top }, 1000);
+	    } else{
+	      $('#add_post').submit();
+	    }
+	})
+	
+	
+	// Select place button functions
+	$('#select_place_button').click(function(){
+		
+		if( $('#country option:selected').val() == '' ){
+			alert( translate['select_country'] );
+			return;
+		}
+		
+		if( $('#airport option:selected').val() == "" && $('#custom_airport_name').val() == '' ){
+			alert( translate['select_airport'] );
+			return;
+		}
+		
+		if( $('#airport option:selected').val() == "" && $('#city option:selected').val() == ""){
+			alert( translate['select_city'] );
+			return;
+		}
+		
+		
+		var selected_place =  $('#country option:selected').text() + ", ";
+		
+		if(  $('#airport option:selected').val() == ""){
+			selected_place =  selected_place + $('#custom_airport_name').val();
+		}else {
+			selected_place =  selected_place + $('#airport option:selected').text();
+		}
+		
+		
+		$('#place_selection_data').html( selected_place  );
+		$('.b_tip_address').hide();
+	});
+	
+	
+	// hide selection window when clicked outside
+	$(document).click(function(ev){
+		el = $(ev.target)
+	
+		if( el.parents('.b_tip_address').length == 0  && !el.hasClass('btn') ){
+			$('.b_tip_address').hide();
+		}
+	})
+
+	$('.new_plane .elsepl').click(function(ev) {
+		
+	    	$(this).parent().find('ul').slideToggle({
+	    		
+	    		complete: function(){
+	    			if( $(this).parent().find('ul').css('display') == 'block' ){
+	    				$('#custom-plane').val(1);
+	    			}else {
+	    				$('#custom-plane').val(0);
+	    			}
+	    		}
+	    	});
+	});
+});
+
+function set_error_pos( el ){
+	error = true;
+	if ( el.offset().top < err_off_top ){  
+		err_off_top = el.offset().top;  
+	}
+}

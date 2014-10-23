@@ -1,0 +1,66 @@
+{
+    xtype:'fieldset',
+    title: 'Категория | Название / ID',
+    collapsible: true,
+    hideBorders:true,
+    autoHeight:true,
+    anchor:'95%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '4px',
+        margin: 0
+    },
+    items :[{
+        layout:'column',
+        border:false,
+        baseCls:'x-plain',
+        defaults:{
+            border:false,
+            baseCls:'x-plain',
+            layout:'form'
+        },
+        anchor:'97%',
+        items:[{
+            columnWidth:0.5,
+            items:[{
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Категория',
+                name:'type',
+                hiddenName:'type',
+                store: TypeStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true,
+                listeners: {
+						select:
+						function(e,a) {
+										ItemStore.removeAll();
+										ItemStore.reload({params: {type_id:a.data.id}});
+									  }
+			            }
+            }]
+        }, {
+            columnWidth:0.5,
+            items:[{
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Название / ID',
+                name:'item_id',
+                hiddenName:'item_id',
+                store: ItemStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true
+            }]
+        }]
+    }]
+}

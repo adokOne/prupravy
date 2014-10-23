@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Image
+END
+GraphicsMagick.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Image/GraphicsMagick.php
+END
+ImageMagick.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Image/ImageMagick.php
+END
+GD.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Image/GD.php
+END

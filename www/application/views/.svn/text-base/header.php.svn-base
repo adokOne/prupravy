@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title><?php echo $title ?></title>
+  <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+  <meta name="description" content="<?php echo $meta_desc ?>" />
+  <meta name="keywords" content="<?php echo $meta_keywords ?>" />
+  <meta name="robots" content="INDEX,FOLLOW" />
+  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <?php stylesheet::render()?>
+  <?php javascript::render()?>
+</head>
+<body>
+  <div class="all_page">
+     <div class="b_header">
+      <a href="/" class="logo">spotters.aero</a>
+      <div class="b_right">
+      	<?php if(!$logged_in): ?>
+      		<a href="#" class="b_enter login-button">Вход на сайт</a>
+      	<?php else: ?>
+      		<a href="/logout" class="b_enter"><?php echo $user->name; ?></a>
+      	<?php endif;?>
+    
+        <div id="login_box">
+            <div id="login_box_content">
+                <form id="login_form">
+                    <h2>Login form</h2>
+                    <input type="text" placeholder="Username" />
+                    <input type="password" placeholder="Password" />
+                    <input type="submit" value="Login" />
+                </form>
+            </div>
+        </div>
+        <div class="b_lang">
+        <?php $l = array('Rus','Ukr','Eng'); ?>
+          <span class="current_lang"> <img src="/images/ico_ru.png" alt="" /></span>
+          <ul class="menu">
+          <?php foreach ($langs_ids as $c=>$i):?>
+          	<li>
+	          	<a href="http://<?php echo Kohana::config('locale.default_lang_code') == $c ? '' : $c . '.' ;  ?><?php echo Kohana::config('config.base_site_domain') ?>"> <?php echo $l[$i]?>
+	          		<img src="<?php echo url::base()?>images/ico_<?php echo $c?>.png" alt="" />
+	          	</a>
+          	</li>
+          <?php endforeach;?>
+          </ul>
+          <a href="#" class="select_open"></a>
+        </div>
+      </div>
+      <div class="b_search">
+        <input type="text" class="form-text" id="f_search" value="Поиск по сайту" />
+        <input type="submit" class="form-submit" value="search" />
+      </div>
+      <div class="main-menu">
+       <table>
+        <tr>
+        <?php foreach ($menu as $cntl=>$name):?>
+        <td <?php if($cntl == $active_tab) echo " class='active'"?>>
+        	<a href="<?php echo $cntl?>"><?php echo $name ?></a>
+        </td>
+        <?php endforeach;?>
+         <td <?php if($active_tab=='add') echo 'class="active"';?>style="width:184px;">
+         	<a href="<?php if( $this->logged_in ) echo '/add'; else echo 'javascript: void(0);' ?>" class="btn<?php if( !$this->logged_in  ) echo ' login-button';  ?>"><img src="/images/bg_menu_btn_icon.png" alt="" /><?php echo $main_lang['add_post']?></a>
+         </td>
+        </tr>
+       </table>
+      </div>
+     </div> <!-- end b_header -->

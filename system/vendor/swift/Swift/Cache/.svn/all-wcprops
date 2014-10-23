@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Cache
+END
+JointOutputStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Cache/JointOutputStream.php
+END
+Disk.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Cache/Disk.php
+END
+Memory.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Cache/Memory.php
+END
+OutputStream.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Cache/OutputStream.php
+END

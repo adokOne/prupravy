@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/spotters/!svn/ver/220/trunk/modules/user/models
+END
+message.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/220/trunk/modules/user/models/message.php
+END
+spam.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/220/trunk/modules/user/models/spam.php
+END
+user_friend.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/spotters/!svn/ver/220/trunk/modules/user/models/user_friend.php
+END

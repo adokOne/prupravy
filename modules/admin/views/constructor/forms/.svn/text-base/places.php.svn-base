@@ -1,0 +1,166 @@
+{
+    xtype:'fieldset',
+    title: 'Название / Код',
+    collapsible: true,
+    hideBorders:true,
+    autoHeight:true,
+    anchor:'95%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '4px',
+        margin: 0
+    },
+    items :[{
+        layout:'column',
+        border:false,
+        baseCls:'x-plain',
+        defaults:{
+            border:false,
+            baseCls:'x-plain',
+            layout:'form'
+        },
+        anchor:'97%',
+        items:[{
+            columnWidth:0.5,
+            items:[
+            <?php foreach ($langs as $k=>$l):?>
+            {
+                xtype:'textfield',
+                fieldLabel:'<?php echo $l?>',
+                name:'name_<?php echo $k?>',
+                anchor:'95%',
+                allowBlank:false
+            },
+            <?php endforeach;?>
+            ]
+        },{
+            columnWidth:0.5,
+            items:[{
+                xtype:'textfield',
+                fieldLabel:'IATA',
+                name:'IATA',
+                anchor:'95%',
+                allowBlank:false
+            },{
+                xtype:'textfield',
+                fieldLabel:'ICAO',
+                name:'ICAO',
+                anchor:'95%',
+                allowBlank:true
+            }]
+        }]
+}]},{
+    xtype:'fieldset',
+    title: 'Страна / Город',
+    collapsible: true,
+    hideBorders:true,
+    autoHeight:true,
+    anchor:'95%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '4px',
+        margin: 0
+    },
+    items :[{
+        layout:'column',
+        border:false,
+        baseCls:'x-plain',
+        defaults:{
+            border:false,
+            baseCls:'x-plain',
+            layout:'form'
+        },
+        anchor:'97%',
+        items:[{
+            columnWidth:0.5,
+            items:[{
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Страна',
+                name:'country_id',
+                hiddenName:'country_id',
+                store: CountryStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true,
+                listeners: {
+						select:
+						function(e,a) {
+									CityStore.removeAll();
+									CityStore.reload({params: {country_id:a.data.id}});
+									}
+			            }
+            }]
+        }, {
+            columnWidth:0.5,
+            items:[{
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Город',
+                name:'city_id',
+                hiddenName:'city_id',
+                store: CityStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true
+            }]
+        }]
+    }]
+}
+
+,{
+    xtype:'fieldset',
+    title: 'Перелинковать существующий аэропорт',
+    collapsible: true,
+    hideBorders:true,
+    autoHeight: true,
+    anchor:'95%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '4px',
+        margin: 0
+    },
+    items :[{
+        layout:'column',
+        border:false,
+        baseCls:'x-plain',
+        defaults:{
+            border:false,
+            baseCls:'x-plain',
+            layout:'form'
+        },
+        anchor:'97%',
+        items:[  {
+            columnWidth:1.0,
+            items:[{
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'',
+                name:'airport',
+                hiddenName:'airport',
+                store: AirportStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true,
+                listeners: {
+						select:
+						function(e,a) {
+										
+									  }
+			            }
+            }]
+        }]
+    }]
+}

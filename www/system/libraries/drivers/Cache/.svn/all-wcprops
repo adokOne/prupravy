@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache
+END
+Eaccelerator.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/Eaccelerator.php
+END
+Xcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/Xcache.php
+END
+File.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/File.php
+END
+Sqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/Sqlite.php
+END
+Memcache.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/Memcache.php
+END
+Apc.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache/Apc.php
+END

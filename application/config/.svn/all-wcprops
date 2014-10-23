@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/spotters/!svn/ver/227/trunk/application/config
+END
+sphinx.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/spotters/!svn/ver/5/trunk/application/config/sphinx.php
+END
+cookie.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/12/trunk/application/config/cookie.php
+END
+tags.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/application/config/tags.php
+END
+locale.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/227/trunk/application/config/locale.php
+END
+routes.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/227/trunk/application/config/routes.php
+END
+upload_pictures.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/spotters/!svn/ver/42/trunk/application/config/upload_pictures.php
+END
+captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/application/config/captcha.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/205/trunk/application/config/database.php
+END
+config.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/210/trunk/application/config/config.php
+END
+email.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/application/config/email.php
+END

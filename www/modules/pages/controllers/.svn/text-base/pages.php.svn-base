@@ -1,0 +1,70 @@
+<?php 
+class Pages_Controller extends Controller {
+	public function __construct(){
+	parent::__construct();
+	}
+	/**
+	 * Виведення статичної сторінми
+	 *
+	 * @param int $id -  ідентифікатор сторінки
+	 */
+	 public function index(){
+	 	$view = new View('index');
+	 	$view->render(true);
+	 }
+	 	 
+	public function page($name, $render = true){
+		
+		if(!$page=Database::instance()->from('pages')->where(array ('pg_seo_name' => $name, 'pg_status' => 'true'))->get()->current())
+		{
+            	Kohana::show_404();
+        }
+		$id=$page->pg_id;
+		$config = Kohana::config('news');
+		$render = (bool) $render;
+		if($id > 0){			
+			if($page){
+				$page->pg_title = stripslashes($page->pg_title);
+				$page->pg_text = stripslashes(urldecode(htmlspecialchars_decode($page->pg_text)));
+					$view = new View('page');
+					$view->pg_seo_name=$page->pg_seo_name;
+					$view->page = $page;
+					$logged = Auth::instance()->logged_in();
+					$view->lang = array();
+					$view->date_format = $config['date_format'];
+					$view->lang['title'] = $page->pg_title . Kohana::config('core.title_separator') . Kohana::config('core.site_name');
+					if($render){
+						$view->render(true);
+						
+					}	else{
+						return $view->render(false);
+						
+					}
+				
+			}	else{
+				Kohana::show_404();
+				
+			}
+			
+		}	else{
+			Kohana::show_404();
+			
+		}
+		
+	}	
+	
+	public static function getpages(){
+		$data=Database::instance()->select('pg_id','pg_title','pg_seo_name')->from('pages')->get();
+		return $data;
+	}
+	
+    public function message_box(){
+    	$id         = str_replace('_','',$this->input->post('id'));
+    	$message    = Database::instance()->from('message_box')->where('id',(int)$id)->get()->current();
+    	$view       = new View ('alert');
+    	$view->text = $message->text;
+    	$view->head = $message->head;
+    	echo json_encode(array('message'=>'ok','html'=>$view->render()));
+    }
+
+}

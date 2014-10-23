@@ -1,0 +1,201 @@
+﻿.jquery-selectbox {
+	BACKGROUND: white url(../images/select_bg.png) repeat-x left top; 
+	PADDING:0 5px; 
+	FLOAT: none; 
+	WIDTH: 270px; 
+	LINE-HEIGHT: 22px; 
+	POSITION: relative; 
+	HEIGHT: 22px;
+	border: 1px solid #3388cd;
+}
+.jquery-selectbox-moreButton , .jquery-selectbox-list span{
+	cursor:pointer!important;
+}
+.jquery-selectbox.selecthover {
+z-index: 700;
+}	
+.jquery-selectbox .jquery-selectbox-currentItem {
+	padding: 0 0 0 2px;
+	white-space: nowrap;
+	display: block;
+	overflow: hidden;
+	color: #3388cd;
+	font-size: 11px;
+}
+.jquery-selectbox .jquery-selectbox-list {
+	display: none;
+	position: absolute;
+	top: 22px;
+	padding: 2px;
+	left: 0px;
+	min-width: 276px;
+	min-height: 50px;
+  max-height: 250px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-size: 12px;
+	z-index: 1000 !important;
+	cursor:pointer;
+	background: #FBFBFB;
+}
+.destination_region .jquery-selectbox .jquery-selectbox-list, .destination_city  .jquery-selectbox .jquery-selectbox-list {
+	width: auto !important;
+	text-align: center;
+	white-space: nowrap;
+}
+.field.dia .jquery-selectbox .jquery-selectbox-list {
+	width: 119px;
+	
+}
+.jquery-selectbox-list {
+	z-index: 1000;
+}
+.jquery-selectbox .jquery-selectbox-moreButton {
+	DISPLAY: block; 
+	RIGHT: 0px; 
+	BACKGROUND: url(../images/select_btn.png) no-repeat center center; 
+	WIDTH: 18px; 
+	POSITION: absolute; 
+	HEIGHT: 22px;
+}
+.jquery-selectbox .jquery-selectbox-moreButton.morebuttonhover {
+	width: 18px;
+	height: 22px;
+	BACKGROUND: url(../images/select_btn.png) no-repeat center center;
+	z-index:100;
+	display:block;
+	position:absolute;
+	right:0px;
+}
+.jquery-selectbox .jquery-selectbox-item.listelementhover {
+	color: #FFFFFF;
+	background: #3388cd; 
+}
+.jquery-selectbox .jquery-selectbox-item {
+	display: block;
+	cursor: default;
+	padding: 1px 0 0 4px;
+	z-index: 9999;
+	color: #3388cd;
+	background: #FFFFFF; 
+	font-size: 11px;
+}
+/** ERROR classes **/
+form .error .jquery-selectbox {
+	color: #d00;
+	border-color: #d00;
+}
+.jNiceInputWrapper {
+	float:left;
+}
+.jNiceInputInner {
+}
+.jNiceInputInner input {
+	width:40px;
+}
+.jNiceInputWrapper_hover {
+	background-position: left bottom;
+}
+.jNiceInputWrapper_hover .jNiceInputInner {
+	background-position: right bottom;
+}
+.jNiceCheckbox {
+	background: transparent url(../img/sprite-y.gif) no-repeat -196px -67px;
+	height: 14px;
+	width: 13px;
+	position:absolute;
+	left:0px;
+	top:0px;
+	z-index:2;
+	cursor:pointer;
+}
+.jNiceChecked {
+	background: transparent url(../img/sprite-y.gif) no-repeat -196px -53px;
+}
+.jNiceWrapper select {
+	border:none;
+	margin:0;
+	padding:0;
+}
+.jNiceSelectWrapper {
+	height: 25px;
+	left:0px;
+	top:0px;
+	z-index:3;
+	#position:absolute;
+}
+.jNiceWrapper iframe {
+	position:absolute;
+	z-index:1;
+	width:100%;
+	left:0px;
+	top:0px;
+}
+.jNiceSelectWrapper .jNiceSelectText {
+	height: 17px;
+	line-height: 17px;
+	padding: 0px 3px;
+	border-right: none;
+	background-color: #FFF;
+	overflow:hidden;
+	float:none;
+	position:absolute;
+	z-index:100;
+	border:0px;
+	border-top:1px solid #6ea3c8;
+	padding:3px 2px 4px;
+	background-color:#FFF;
+}
+.jNiceSelectWrapper .jNiceSelectOpen {
+	width: 27px;
+	height: 26px;
+	background: url(../img/sprite-y.gif) no-repeat -190px -437px;
+	z-index:100;
+	display:block;
+	position:absolute;
+	right:0px;
+}
+.jNiceSelectWrapper ul {
+	top: 25px;
+	background-color: #FFF;
+	border: solid 1px #CCC;
+	height: 150px;
+	position:absolute;
+	left:0px;
+	list-style:none;
+	display: none;
+	margin:0;
+	padding:0;
+	overflow-y:auto;
+	z-index:100;
+	width: 99%;
+}
+.jNiceSelectWrapper ul a {
+	color:#0099CC;
+	background-color: #FFF;
+	display:block;
+	padding:5px;
+	text-decoration:none;
+}
+.jNiceSelectWrapper ul a:hover {
+	background:#E1F5FF;
+}
+.jNiceSelectWrapper ul a.selected {
+	background: #EDEDED;
+}
+.jNiceFocus {
+	border: dotted 1px #666666;
+}
+.jNiceHidden {
+	opacity:0;
+	z-index:-1;
+	position:relative;
+}
+.jNiceWrapper {
+	position:relative;
+	vertical-align:top;
+}
+.jNiceWrapper input {
+	outline:none;
+	moz-outline:none;
+}

@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/spotters/!svn/ver/220/trunk/modules/user/views
+END
+friends.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/friends.php
+END
+login_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/216/trunk/modules/user/views/login_form.php
+END
+alert_message.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/alert_message.php
+END
+cabinet_messages.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/cabinet_messages.php
+END
+_left_menu.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/_left_menu.php
+END
+email_registration.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/211/trunk/modules/user/views/email_registration.php
+END
+message_read_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/message_read_form.php
+END
+email_recovery.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/spotters/!svn/ver/211/trunk/modules/user/views/email_recovery.php
+END
+cabinet.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/spotters/!svn/ver/220/trunk/modules/user/views/cabinet.php
+END
+forgot_pass.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/spotters/!svn/ver/211/trunk/modules/user/views/forgot_pass.php
+END
+register_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/spotters/!svn/ver/211/trunk/modules/user/views/register_form.php
+END

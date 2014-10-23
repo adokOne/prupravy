@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/spotters/!svn/ver/263/trunk/modules/news/views
+END
+news_show.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/263/trunk/modules/news/views/news_show.php
+END
+_news_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/189/trunk/modules/news/views/_news_main.php
+END
+news_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/257/trunk/modules/news/views/news_form.php
+END
+news_index.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/263/trunk/modules/news/views/news_index.php
+END
+_news_reklama.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/spotters/!svn/ver/201/trunk/modules/news/views/_news_reklama.php
+END
+_actual_topics.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/spotters/!svn/ver/191/trunk/modules/news/views/_actual_topics.php
+END
+_telegraph_on_main.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/189/trunk/modules/news/views/_telegraph_on_main.php
+END

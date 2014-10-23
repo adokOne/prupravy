@@ -1,0 +1,48 @@
+var Get_Country = function (){
+	mainTabPanel.load({
+				url: "/admin/countries",
+				params: {
+					method: 'post'
+				},
+	 			scripts: true,
+	 			text: "Загрузка"
+	});
+}
+var CountryStore = new Ext.data.Store({
+		  proxy:new Ext.data.HttpProxy({
+	            url:'/admin/places/country_list'
+	        }),
+	        reader:new Ext.data.JsonReader({
+	            root:'items',
+	            totalProperty:'total',
+	            idProperty:'id',
+	        },['id',"name"]),
+	        remoteSort:true,
+
+ });
+ CountryStore.load();
+ var Countrycombo = new Ext.form.ComboBox(
+ {
+                xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Страна',
+                name:'country_id',
+                hiddenName:'country_id',
+                store: CountryStore,
+                displayField:'name',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true,
+                listeners: {
+							select:
+							function(e,a) {
+							},
+							change: function(combo, newValue, oldValue){
+							}
+						
+			            }
+            }
+ );

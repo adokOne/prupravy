@@ -1,0 +1,13 @@
+var CompanyStore = new Ext.data.Store({
+	  proxy:new Ext.data.HttpProxy({
+            url:'/admin/companies/companies_list'
+        }),
+        reader:new Ext.data.JsonReader({
+            root:'items',
+            totalProperty:'total',
+            idProperty:'id',
+        },['id',"name"]),
+        remoteSort:true
+});
+ 
+CompanyStore.load();

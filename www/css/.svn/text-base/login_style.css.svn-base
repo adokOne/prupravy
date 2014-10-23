@@ -1,0 +1,52 @@
+#content {
+	height:733px;
+	background:url('img/bg.jpg') center;
+}
+#login_box {
+	display:none;
+	position:absolute;
+	width:236px;
+	margin: 22px 0 0 -45px;
+}
+#tab {
+	background:#fff;
+	width:91px;
+	float:right;
+	height:38px;
+	border-top-left-radius:5px;
+	border-top-right-radius:5px;
+	height:41px;
+}
+#tab .login_btn {
+	float:left;
+	margin:9px 0 0 9px;
+}
+#login_box_content {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+    position: relative;
+    width: 236px;
+    z-index: 9999;
+}
+#login_form {
+	margin:9px 0 0 9px;
+}
+#login_form input[type=text],#login_form input[type=password] {
+	border:1px solid #d8d8d8;
+	border-radius:3px;
+	font:italic 14px Georgia,times,sans-serif;
+	height:37px;
+	width:205px;
+	margin-top:10px;
+	padding-left:10px;
+}
+#login_form input[type=submit] {
+	border:none;
+	background:#55A3E3;
+	color:#fff;
+	float:right;
+	margin:9px 9px 9px 0;
+	width:56px;
+	height: 29px;
+}

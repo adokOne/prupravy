@@ -1,0 +1,451 @@
+    var getSendVariables = function(arrFormVariables){
+		var paramArray = new Array();
+		for(var lp1=0; lp1 < arrFormVariables.length; lp1++){		
+			
+			if(typeof(Ext.getCmp(arrFormVariables[lp1]))!='undefined'){
+				
+				switch(Ext.getCmp(arrFormVariables[lp1]).getXType()){
+					case 'checkbox': 
+						paramArray.push("'" + arrFormData[lp1] + "': '" + (Ext.getCmp(arrFormData[lp1]).getValue() ? '1' : '0') + "'");
+						break;						
+						
+					default:						
+						paramArray.push("'" + arrFormVariables[lp1] + "': '" + terminatedString(Ext.getCmp(arrFormVariables[lp1]).getValue()) + "'");
+						break;        					
+				}				
+				
+
+			}
+			
+		}  
+		return Ext.util.JSON.decode('{' + paramArray.join(',') + '}')  	;
+    	
+    };
+    var setActiveTabCool = function(objTabPanel, indexTab){
+        try{
+            objTabPanel.setActiveTab(indexTab);
+          } catch(e) {
+            objTabPanel.setActiveTab(0);
+            objTabPanel.setActiveTab(indexTab);
+          }
+    }
+    
+    var loadAfterLoad = function(arrFormVariables, formReader, flagNew){        
+        for(var lp1=0; lp1<arrFormVariables.length; lp1++){    
+            if(typeof(Ext.getCmp(arrFormVariables[lp1]))!='undefined'){                
+                if(!flagNew){
+                    eval('var formVal = formReader.jsonData[0].'+arrFormVariables[lp1]);
+                } else {
+                    var formVal = '';
+                }
+                Ext.getCmp(arrFormVariables[lp1]).setValue(formVal);
+            }
+        }
+    }
+    
+	function terminatedString(str){
+		var strReplace = String(str);
+		
+		strReplace = strReplace.replace(/\n/gi,"\\n");
+		strReplace = strReplace.replace(/\'/gi,"`");
+		strReplace = strReplace.replace(/\’/gi,"`");
+		strReplace = strReplace.replace(/\r/gi,"\\r");
+	    return strReplace;
+		
+	} 
+
+ 
+            	
+
+	var submitPostForm = function(){				
+		if (editPostForm.form.isValid()) {
+            editPostForm.form.submit({
+            	params: getSendVariables(new Array(<?php echo $fileds ?>)),
+                waitMsg:'Ожидайте...',
+                url:'/admin/pages/save',
+                failure:function(form, action) {
+                    Ext.MessageBox.alert('Ошибка', action.result.msg);
+                    
+                },
+                success:function(form, action) {
+                	
+                	if(action.response.responseText.length > 0){
+                		var json = Ext.util.JSON.decode(action.response.responseText);
+                		if(json.success){
+					        bTabPanel.getComponent(0).enable();
+					        console.log(bTabPanel);
+					        window.location.reload();
+					        bTabPanel.setActiveTab(0);
+							//bTabPanel.getComponent(1).disable();                    	
+		
+							itemsStore.load();
+                   			return;
+                			
+                		}else{
+							Ext.MessageBox.alert('Ошибка', json.msg);				                			
+							return;
+                			
+                		}
+                		
+                	}
+                	Ext.MessageBox.alert('Ошибка', 'Ошибка сохранения');
+				                	                	
+                }
+            });
+           
+        } else{
+            Ext.MessageBox.alert('Ошибка', 'Введите необходимые данные для условий :' + unValidForms);
+            
+        }
+		
+	};    
+
+	 var editPostFormReader = new Ext.data.JsonReader({},[<?php echo $fileds ?>]);
+	 <?php foreach ($langs as $k=>$l) :?>
+	 var <?php echo 'TextPanel_'.$k?>=new Ext.TabPanel({
+			        deferredRender:false,
+			        activeTab:0,
+			        id:'text_panel_<?php echo $l?>',
+			        tabPosition: 'top',
+			        border:false,
+				    listeners:{
+				       	'render': function(){
+				       	    if(this.id != 'text_panel_ru')
+				           	      this.hide();
+				       	}
+				           	
+				    },
+			        defaults:{
+			            layout:'fit'
+			        },
+			        baseCls:'x-plain',     	
+			        items:[
+			        	{
+			        		title:'Текст (<?php echo $l?>)',
+							items:[{
+				xtype: "tinymce",
+				fieldLabel: "TEXT",
+				id: 'text_<?php echo $k?>',
+				width: 800,
+				height: 800,
+				tinymceSettings: {
+					theme: "advanced",
+					plugins: "pagebreak,style,layer,table,advhr,advimage,advlink,emotions,iespell,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+					theme_advanced_buttons1: "bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+					theme_advanced_buttons2: "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+					theme_advanced_buttons3: "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|",
+					theme_advanced_buttons4: "insertlayer,moveforward,movebackward,absolute,|,styleprops,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,pagebreak",
+					theme_advanced_toolbar_location: "top",
+					theme_advanced_toolbar_align: "left",
+					theme_advanced_statusbar_location: "bottom",
+					theme_advanced_resizing: false,
+					extended_valid_elements: "a[name|href|target|title|onclick],img[class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name],hr[class|width|size|noshade],font[face|size|color|style],span[class|align|style]",
+					template_external_list_url: "example_template_list.js"
+				}
+			}]			        					        		
+		
+			        	}
+			        
+			       ]
+	});
+	 <?php endforeach;?>
+
+	 var editPostForm = new Ext.FormPanel({
+    	baseCls:'x-plain',
+        method:'POST',
+        region:'center',
+        border:true,
+        labelAlign: 'left',
+        autoHeight:true,
+        labelWidth:150,
+        reader: editPostFormReader,
+        items:[
+	       	{xtype:'hidden',
+	            name:'id'
+	        },
+<?php foreach ($langs as $k=>$l) :?>
+{
+    xtype:'fieldset',
+    title: 'Названия и мета теги',
+    collapsible: true,
+    hideBorders:true,
+    id: 'field_<?php echo $l?>',
+    name:'field',
+    listeners:{
+       	'render': function(){
+       	    if(this.id != 'field_ru')
+           	      this.hide();
+       	}
+           	
+    },
+    autoHeight:true,
+    anchor:'100%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '4px',
+        margin: 0
+    },
+    items :[{
+        layout:'column',
+        border:false,
+        baseCls:'x-plain',
+        defaults:{
+            border:false,
+            baseCls:'x-plain',
+            layout:'form'
+        },
+        anchor:'100%',
+        items:[
+		        {
+		            columnWidth:1,
+		            items:[{
+		                xtype:'textfield',
+		                fieldLabel:'Название(<?php echo $l?>)',
+		                name:'title_<?php echo $k?>',
+		                id:'title_<?php echo $k?>',
+				        allowBlank: '<?php if($k>0) echo 'true';  else echo  'false'?>',
+		                anchor:'100%',
+		            },{
+		                xtype:'textfield',
+		                fieldLabel:'Тайтл(<?php echo $l?>)',
+		                name:'title_<?php echo $k?>',
+		                id:'title_<?php echo $k?>',
+				        allowBlank: '<?php if($k>0) echo 'true';  else echo  'false'?>',
+		                anchor:'100%',
+		            },{
+		                xtype:'textfield',
+		                fieldLabel:'Мета описание (<?php echo $l?>)',
+		                name:'meta_desc_<?php echo $k?>',
+		                anchor:'100%',
+		                id:'meta_desc_<?php echo $k?>',
+				        allowBlank: '<?php if($k>0) echo 'true';  else echo  'false'?>'
+		                
+		            },{
+		                xtype:'textfield',
+		                fieldLabel:'Ключевые слова (<?php echo $l?>)',
+		                name:'meta_keywords_<?php echo $k?>',
+		                anchor:'100%',
+		                id:'meta_keywords_<?php echo $k?>',
+				        allowBlank: '<?php if($k>0) echo 'true';  else echo  'false'?>'
+		            },{
+					    xtype:'textfield',
+		                fieldLabel:'SEO (eng)',
+		                name:'seo_name_<?php echo $k?>',
+		                anchor:'100%',
+		                id:'seo_name_<?php echo $k?>',
+				        allowBlank: '<?php if($k>0) echo 'true';  else echo  'false'?>'
+					}]
+		        },
+        	
+        ]
+}]},
+<?php endforeach;?>
+
+    {   xtype:'fieldset',
+    title: '',
+    collapsible: true,
+    hideBorders:true,
+    autoHeight:true,
+    anchor:'100%',
+    style: {
+        border: '1px solid #AAA',
+        padding: '10px',
+        margin: 0
+    },
+    items:[{   xtype:'combo',
+                anchor:'95%',
+                fieldLabel:'Активна',
+                name:'status',
+                hiddenName:'status',
+                store: new Ext.data.JsonStore({
+                    id: 'ids',
+                    fields: ['id', 'text'],
+                    data : [
+                        {id: '1', text:'Да'},
+                        {id: '0', text:'Нет'}
+                    ]
+                }),
+                displayField:'text',
+                valueField:'id',
+                typeAhead: true,
+                mode: 'local',
+                forceSelection: true,
+                triggerAction: 'all',
+                selectOnFocus:true,
+                allowBlank: 'false',
+                listeners: {
+						select:
+						function(e,a) {
+									
+									}
+			            }
+            }]
+    }
+]         
+    });     
+    
+	var editPostPanel = {
+		height:300,
+		border:false,
+		layout:'border',
+		items:[
+			{
+				region:'center',
+				layout:'border',
+				border:false,
+				width:200,
+				items:[{	
+						region:'center',
+						border:false,
+						baseCls:'x-plain',
+						items:editPostForm
+					  }
+					]
+			},{
+				region:'west',
+				width:700,
+				border:true,
+				items:[<?php foreach($langs as $k=>$l) echo "TextPanel_".$k.","?>]
+			},
+		
+		]
+			
+	};   
+	
+	/*******
+	Редагування публікації
+	v_id - ідентифікатор публікації
+	********/
+	var edit_bloger_id = null;
+	
+	var edit_bloger = function (v_id) {
+		mainTabPanel.items.each(function(item){mainTabPanel.remove(item);}, mainTabPanel.items);
+	    mainTabPanel.add({
+	    		title: 'Страница',
+	    		layout:'fit',
+	    		iconCls:'ico_news',
+	    		items: [bTabPanel]
+	    	});
+	        
+	    mainTabPanel.setActiveTab(0);			
+		edit_bloger_id = v_id;
+
+		bTabPanel.getComponent(0).enable();
+       	setActiveTabCool(bTabPanel, 1);    
+		
+	    if(v_id > 0){		    	
+		    editPostForm.form.load({url:'/admin/pages/edit_page',
+		        params:{
+		            id:v_id
+		        },
+		        waitMsg:'Ожидайте...',
+		        success:function(response){		    
+		        	loadAfterLoad(new Array(<?php echo $fileds ?>),editPostFormReader, false);		      			        	
+	
+		        }
+		    });
+	    }	else{	    	
+   			editPostForm.form.reset();
+   			loadAfterLoad(new Array(<?php echo $fileds ?>),editPostFormReader, true);   			
+   						
+
+	    }
+	    
+	};	
+	
+	var mainTabPanel = Ext.getCmp('dashboard_mainTabPanelID');
+	
+	Ext.apply(Ext.form.VTypes, {
+	    daterange : function(val, field) {
+	        var date = field.parseDate(val);
+	
+	        if(!date){
+	            return;
+	        }
+	        if (field.startDateField && (!this.dateRangeMax || (date.getTime() != this.dateRangeMax.getTime()))) {
+	            var start = Ext.getCmp(field.startDateField);
+	            start.setMaxValue(date);
+	            start.validate();
+	            this.dateRangeMax = date;
+	        } 
+	        else if (field.endDateField && (!this.dateRangeMin || (date.getTime() != this.dateRangeMin.getTime()))) {
+	            var end = Ext.getCmp(field.endDateField);
+	            end.setMinValue(date);
+	            end.validate();
+	            this.dateRangeMin = date;
+	        }
+	        return true;
+	    }
+	});
+    
+    
+
+    
+    var bTabPanel = new Ext.TabPanel({
+    		id:'main_tab_panel',
+            border:false,
+            activeTab: 0,
+            tabPosition:'bottom',
+            layoutOnTabChange:true,
+            monitorResize:true,
+            defaults: { autoScroll:true },
+            	items:[{title: 'Редактирование новостей',
+                disabled:true,
+                layout:'fit',
+                baseCls:'x-plain',
+                id: 'editBlogers',
+                items:[editPostPanel],
+                tbar:[{
+                    text:'Сохранить',
+                    iconCls:'save',
+                    handler:function() {
+                    	submitPostForm();
+                    	
+                    }
+                }, {
+                    text:'Отмена',
+                    iconCls:'cancel',
+                    handler:function() {                    	
+				        bTabPanel.getComponent(0).enable();
+				        bTabPanel.setActiveTab(0);                    	
+                    	
+                    }
+                    
+
+                },{
+				xtype: 'tbbutton',
+				text: 'Язык',
+				menu: [
+					<?php foreach($langs as $k=>$lang):?>
+					{
+					text: '<?php echo $lang?>',
+					handler:function(){
+						<?php foreach($langs as $r=>$l):?>
+					    	Ext.getCmp('text_panel_<?php echo $l?>').hide();
+					    	Ext.getCmp('field_<?php echo $l?>').hide();
+					    	Ext.getCmp('title_<?php echo $r?>').allowBlank = true;
+					    	Ext.getCmp('title_<?php echo $r?>').validate();
+					    	Ext.getCmp('meta_desc_<?php echo $r?>').allowBlank = true;
+					    	Ext.getCmp('meta_desc_<?php echo $r?>').validate();
+					    	Ext.getCmp('meta_keywords_<?php echo $r?>').allowBlank = true;
+					    	Ext.getCmp('meta_keywords_<?php echo $r?>').validate();
+					    	Ext.getCmp('seo_name_<?php echo $r?>').allowBlank = true;
+					    	Ext.getCmp('seo_name_<?php echo $r?>').validate();
+						<?php endforeach;?>
+					    	Ext.getCmp('title_<?php echo $k?>').allowBlank = false;
+					    	Ext.getCmp('title_<?php echo $k?>').validate();
+					    	Ext.getCmp('meta_desc_<?php echo $k?>').allowBlank = false;
+					    	Ext.getCmp('meta_desc_<?php echo $k?>').validate();
+					    	Ext.getCmp('meta_keywords_<?php echo $k?>').allowBlank = false;
+					    	Ext.getCmp('meta_keywords_<?php echo $k?>').validate();
+					    	Ext.getCmp('seo_name_<?php echo $k?>').allowBlank = false;
+					    	Ext.getCmp('seo_name_<?php echo $k?>').validate();
+							Ext.getCmp('text_panel_<?php echo $lang;?>').show(true);
+							Ext.getCmp('field_<?php echo $lang?>').show(true);
+						}
+					},
+					<?php endforeach;?>
+				]
+			}]
+            }]
+    });

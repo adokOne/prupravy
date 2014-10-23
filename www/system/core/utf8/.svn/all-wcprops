@@ -1,0 +1,149 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8
+END
+strtoupper.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strtoupper.php
+END
+transliterate_to_ascii.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/transliterate_to_ascii.php
+END
+str_ireplace.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/str_ireplace.php
+END
+stristr.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/stristr.php
+END
+to_unicode.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/to_unicode.php
+END
+ucwords.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/ucwords.php
+END
+strcspn.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strcspn.php
+END
+strspn.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strspn.php
+END
+ord.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/ord.php
+END
+trim.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/trim.php
+END
+ucfirst.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/ucfirst.php
+END
+strpos.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strpos.php
+END
+strlen.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strlen.php
+END
+str_pad.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/str_pad.php
+END
+strcasecmp.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strcasecmp.php
+END
+substr_replace.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/substr_replace.php
+END
+from_unicode.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/from_unicode.php
+END
+str_split.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/str_split.php
+END
+ltrim.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/ltrim.php
+END
+substr.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/substr.php
+END
+strrev.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strrev.php
+END
+strrpos.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strrpos.php
+END
+rtrim.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/rtrim.php
+END
+strtolower.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/spotters/!svn/ver/5/trunk/system/core/utf8/strtolower.php
+END

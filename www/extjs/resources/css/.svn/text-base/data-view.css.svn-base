@@ -1,0 +1,14 @@
+
+.images{background: #fff;font: 11px Arial, Helvetica, sans-serif;}
+
+.images .thumb{background: #dddddd;padding:3px;}
+
+.images .thumb-wrap{float: left;margin: 4px;margin-right: 0;padding: 5px;}
+
+
+.images .x-view-selected .thumb{background:#8db2e3;}
+
+.images .loading-indicator {font-size:8pt;background-image:url(../images/default/grid/loading.gif);background-repeat: no-repeat;background-position: left;padding-left:20px;margin:10px;}
+
+.main_foto{background: #dddddd;}
+.main_foto div{width:240px; background: #dddddd; margin:0 auto; padding:3px;}

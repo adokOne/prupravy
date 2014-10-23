@@ -1,0 +1,26 @@
+	 <div class="b_footer">
+       <div class="main-menu">
+       <table>
+        <tr>
+         <td><a href="#">Главная</a></td>
+         <td><a href="<?php echo url::base().'pictures/uploader_form' ?>">Загрузить фото</a></td>
+         <td><a href="#">Новости</a></td>
+         <td><a href="#">Видео</a></td>
+         <td><a href="#">Каталог</a></td>
+         <td><a href="#">Рисунки</a></td>
+         <td><a href="#">Альбомы</a></td>
+         <td><a href="#">Форум</a></td>
+         <td><a href="#">Блог</a></td>
+         <td><a href="#">RSS</a></td>
+         <td><a href="#">О сайте</a></td>
+        </tr>
+       </table>
+      </div>
+      <div class="b_copyright">
+        © spotters.aero<br />
+        © aerovokzal p.e.
+      </div>
+     </div> <!-- end b_footer -->
+  </div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US
+END
+session.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/session.php
+END
+validation.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/validation.php
+END
+captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/captcha.php
+END
+event.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/event.php
+END
+pagination.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/pagination.php
+END
+database.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/database.php
+END
+image.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/image.php
+END
+calendar.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/calendar.php
+END
+core.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/core.php
+END
+upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/upload.php
+END
+cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/cache.php
+END
+encrypt.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/encrypt.php
+END
+profiler.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/profiler.php
+END
+orm.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/orm.php
+END
+errors.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/errors.php
+END
+swift.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/i18n/en_US/swift.php
+END

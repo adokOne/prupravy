@@ -1,0 +1,14 @@
+<?php 
+class Page_Model extends ORM{
+	
+	protected $primary_key = 'pg_id';
+	
+	public function sorting($sortby = array()){
+		
+		$this->sorting = $sortby;
+		
+		return $this;
+		
+	}
+	
+}

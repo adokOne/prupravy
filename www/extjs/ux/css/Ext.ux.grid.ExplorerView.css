@@ -1,0 +1,84 @@
+.x-grid-group-body-floatcontainer:after {
+	content: ".";
+	display: block;
+	height: 0;
+	font-size: 0;
+	clear: both;
+	visibility: hidden;
+}
+.x-grid-group-body-floatcontainer { display: inline-block; }
+/* Hides from IE Mac \*/
+* html .x-grid-group-body-floatcontainer { height: 1%; }
+.x-grid-group-body-floatcontainer { display: block; }
+/* End Hack */ 
+
+.ux-explorerview-item {
+	float: left; display: block; border: none;
+}
+
+/* Tiles */
+
+.ux-explorerview-thumb-item { width: 105px; height: 106px; margin: 5px 0 0 5px; -moz-user-select: none; }
+
+.ux-explorerview-tiles-item { width: 105px; height: 48px; margin: 5px 0 0 5px; -moz-user-select: none; }
+.ux-explorerview-tiles-item .ux-explorerview-icon { float: left; width: 50px; height: 50px; }
+.ux-explorerview-tiles-item .ux-explorerview-text { float: left; width: 120px; padding-top: 8px; white-space: nowrap; overflow: hidden; }
+.ux-explorerview-tiles-item .ux-explorerview-text span { color: #777; }
+
+/* Type Icons */
+.ux-explorerview-tiles-item .ux-explorerview-icon div.pdf {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/pdf.png);
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.doc {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/doc.png);
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.mp3 {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/mp3.png);
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.flv {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/flv.png);
+}
+
+
+
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.news {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/news.png) no-repeat center center;
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.gallery {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/gallery.png) no-repeat center center;
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.audio {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/audio.png) no-repeat center center;
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.video {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/video.png) no-repeat center center;
+}
+
+.ux-explorerview-tiles-item .ux-explorerview-icon div.documents {
+    width:48px;
+    height: 48px;
+    background: url(images/icons/file_types/documents.png) no-repeat center center;
+}

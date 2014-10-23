@@ -1,0 +1,405 @@
+/* Do smaky 
+ v.1.0 */
+
+@import url("reset.css");
+ 
+/* General */
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Tahoma;
+	font-size: 12px;
+	color: #603200;
+	min-height: 100%;
+	background: url(/img/body_bg.png);
+}
+
+p {
+	line-height: 1.2;
+}	
+
+a {
+	text-decoration: none;
+	color: #603200;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+}
+
+strong {
+	font-weight: bold;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.clear {
+	clear: both;
+}
+
+/* Главная */
+
+#wrapper {
+	margin: 0 auto;
+	width: 1041px;
+	background: url(/img/background.png);
+	-webkit-box-shadow: 0px 0px 30px rgba(45, 52, 52, 0.8);
+	   -moz-box-shadow: 0px 0px 30px rgba(45, 52, 52, 0.8);
+			box-shadow: 0px 0px 30px rgba(45, 52, 52, 0.8);
+	behavior: url(/js/pie/PIE.php);
+}
+
+#content{
+	position: relative;
+}
+#header {
+	width: 1157px;
+	position: relative;
+	right: 59px;
+	height: 143px;
+	background: url(/img/header.png) no-repeat;
+}
+
+.logo {
+	width: 240px;
+	height: 112px;
+	position: absolute;
+	left: 41%;
+	top: 10.4%;
+}
+
+.lang {
+	position: relative;
+	left: 1%;
+	bottom: 85%;
+	margin: 0 0 0 5px;
+	font-size: 18px;
+}
+
+.lang .cufon:hover {
+	margin-top: 2px;
+	border-bottom: 2px solid #603200;
+}
+
+.lang.active .cufon {
+	margin-top: 2px;
+	border-bottom: 2px solid #603200;
+}
+
+
+.nav_menu {
+	position: absolute;
+	left: 14%;
+	top: 56%;
+}
+
+.nav_menu2 {
+	position: absolute;
+	right: 20.5%;
+	top: 56%;
+}
+
+.nav_menu li, .nav_menu2 li {
+	float: left;
+	margin: 0 0 0 20px;
+	padding: 0 0 0 12px;
+	background: url(/img/dot.png) no-repeat 0 5px;
+}
+
+.nav_menu a:hover, .nav_menu2 a:hover , .nav_menu a.active, .nav_menu2 a.active{
+	border-bottom: 2px solid #603200;
+}
+
+.nav_menu a, .nav_menu2 a {
+	font-size: 18px;
+}
+
+.slogan {
+	display: inline-block;
+	position: relative;
+	left: 35%;
+	bottom: 40px;
+	padding: 5px 0 0 0;
+	font-size: 19px;
+	border-top: 3px solid #603200;
+} 
+
+.explain {
+	width: 880px;
+	margin: 0 0 0 75px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 1.5;
+}
+
+.advantage {
+	width: 745px;
+	position: relative;
+	left: 8%;
+	margin: 40px 0 0 0;
+	padding: 0 0 40px 90px;
+	background: url(/img/pepper-pot.png) no-repeat;
+}
+
+.advantage h3 {
+	margin: 0 0 20px 0;
+	font-weight: bold;
+}
+
+.advantage li {
+	margin: 5px 0 0 0;
+	padding: 0 0 0 15px;
+	line-height: 1.1;
+	background: url(/img/dot.png) no-repeat 0 5px;
+}
+
+#footer img {
+	position: relative;
+	left: 23%;
+}
+
+/* Коллекция */
+
+.collection {
+	margin: 30px 0 0 77px;
+}
+.collection li {
+	float: left;
+	margin: 20px 35px 0 0;
+	position: relative;
+}
+
+.collection a {
+	position: relative;
+}
+
+.big {
+	display: none;
+}
+
+.collection a:hover .big {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: -9px;
+}
+
+.sub {
+	font-size: 10px !important;
+	border-top: 2px solid #603200;
+	font-size: .7em;
+}
+
+#collection_footer, #recipes_footer {
+	height: 200px;
+	padding: 40px 0 0 80px;
+	background: url(/img/background.png);
+}
+
+#info {
+	width: 195px;
+	height: 225px;
+	padding: 40px 0 0 20px;
+	background: url(/img/fancybox_bg.png);
+}
+
+#info h5 {
+	margin: 0 0 10px 0;
+	font-weight: bold;
+}
+
+#info p {
+	width: 175px;
+	margin: 0 0 10px 0;
+	font-size: 11px;
+}	
+
+.strong {
+	font-weight: bold;
+}
+
+/* Рецептыы */
+
+.recipes {
+	width: 760px;
+	margin: 30px 0 0 30px;
+}	
+
+.meal {
+	position: relative;
+	width: 360px;
+	margin: 20px 0 0 20px;
+}
+.meal img {
+	float: left;
+	padding: 10px;
+	margin: 0 15px 0 0;
+	background: url(/img/fancybox_bg.png);
+	-webkit-box-shadow: inset -1px 0px 7px #cdba9c;
+	   -moz-box-shadow: inset -1px 0px 7px #cdba9c;
+			box-shadow: inset -1px 0px 7px #cdba9c;
+	behavior: url(/js/pie/PIE.php);
+}
+
+.meal h5 {
+	margin: 0 0 15px 0;
+}
+
+.meal p {
+	margin: 0 0 25px 0;
+}
+
+.more {
+	position: absolute;
+	bottom: 5px;
+	padding: 7px 16px 6px 8px;
+	color: #fff;
+	font-weight: bold;
+	background: url(/img/more_btn.png) no-repeat ;
+}
+
+.side {
+	margin: 60px 45px 0 0;
+}
+
+#recipe {
+	width: 485px;
+	min-height: 345px;
+	padding: 25px;
+	background: url(/img/fancybox_bg.png);
+}
+
+.recipe_cont {
+	background: url(/img/pepper.png) no-repeat 84% 7%;
+}
+
+.recipe_cont h5 {
+	margin: 20px 0 15px 0 ;
+}
+
+.formula {
+	margin: 10px 0 0 0;
+}
+
+/* Партнерам */
+
+.container {
+	width: 560px;
+	margin:	30px 0 0 60px; 
+}
+
+.table_head {
+	margin: 0 0 10px 0;
+	padding: 23px 0px 20px 40px;
+	color: #fff;
+	font-weight: bold;
+	background: url(/img/table_head.png) no-repeat;
+}
+
+.sku {
+	margin: 0 120px 0 0;
+}
+
+.weight {
+	margin: 0 54px 0 0;
+}
+
+.pack {
+	margin: 0 70px 0 0;
+}
+
+.table_top, .table_bottom {
+	width: 557px;
+	height: 5px;
+}
+
+.table_top {
+	background: url(/img/table_bd_top.png) no-repeat;
+}
+
+.table_bottom {
+	margin-top: -6px;
+	background: url(/img/table_bd_bottom.png) no-repeat;
+}
+
+.middle {
+	background: url(/img/table_bd.png) repeat-y;
+}
+
+.list li {
+	margin: 2px 0 11px 13px;	
+}
+
+.list2 li {
+	margin: 2px 0 11px 19px;
+}
+
+.list3 {
+	position: relative;
+	top: 93px;
+	left: 35px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.list3 span {
+	font-size: 22px;
+}
+
+.list4 li {
+	margin: 2px 0 11px 74px;
+}
+
+.load {	
+	margin-top: 10px;
+	padding: 10px 23px 10px 30px;
+	color: #fff;
+	font-weight: bold;
+	background: url(/img/dowload_btn_bg.png) no-repeat;
+}
+
+#partners_footer {
+	height: 200px;
+}
+
+/* Контакты */
+
+.contacts {
+	margin: 40px 0 0 60px;
+}
+
+.map {
+	margin-top: 40px;
+}
+
+.address {
+	margin: 0 0 0 40px;
+}
+
+.address h6 {
+	margin-bottom: 10px;
+	text-transform: uppercase;
+}
+
+.address p {
+	margin-bottom: 10px;
+}
+
+.maker {
+	margin: 25px 0;
+}
+
+ .shadow {
+-webkit-box-shadow: 3px 3px 6px rgba(50, 50, 50, 0.75);
+-moz-box-shadow:    3px 3px 6px rgba(50, 50, 50, 0.75);
+box-shadow:         3px 3px 6px rgba(50, 50, 50, 0.75);
+  }

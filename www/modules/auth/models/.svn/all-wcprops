@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/spotters/!svn/ver/221/trunk/modules/auth/models
+END
+user.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/221/trunk/modules/auth/models/user.php
+END
+user_token.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/5/trunk/modules/auth/models/user_token.php
+END
+auth_user_token.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/spotters/!svn/ver/5/trunk/modules/auth/models/auth_user_token.php
+END
+auth_user.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/modules/auth/models/auth_user.php
+END
+role.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/modules/auth/models/role.php
+END
+auth_role.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/modules/auth/models/auth_role.php
+END

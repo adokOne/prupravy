@@ -1,0 +1,568 @@
+﻿/* регистрация */
+.register_page{
+ 	background: white;
+	-moz-box-shadow: 0 2px 2px #999;
+	-webkit-box-shadow: 0 2px 2px #999;
+	box-shadow: 0 2px 2px #999;
+	margin-bottom: 10px;
+	padding: 6px 10px 10px;
+	overflow: hidden;
+	width: 981px;
+}
+.register_page h3{
+  color:#2F2F2F;
+  font-size:16px;
+}
+.form_list{
+  overflow: hidden;
+  list-style: none;
+  clear: both;
+  padding: 15px 28px;
+}
+.form_list li{
+  padding-bottom: 23px;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+}
+.form_list label{
+   font: 12px Arial;
+   color: black;
+   display: block;
+   clear: both;
+   padding-bottom: 3px;
+   text-align: left;
+}
+.form_list .b_error{
+   font: 10px Arial;
+   color: #d30000;
+   position: absolute;
+   bottom: 15px;
+   left: 1px;
+   display:none;
+}
+.form_list .form-text{
+  width: 205px;
+  padding: 3px 5px 4px;
+  border: 1px solid #55a3e3;
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-right: 15px;
+}
+.form_list .form-textarea{
+  width: 452px;
+  padding: 3px 5px 4px;
+  overflow: auto;
+  height: 70px;
+  border: 1px solid #55a3e3;
+}
+.form_list .b_photo{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border: 1px solid #55a3e3;
+  float: left;
+}
+.form_list .btn_upload{
+  color: #1d7cc9;
+  font: 14px Arial;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 2px;
+  margin-top: 36px;
+}
+.form_list .b_left{
+  float: left;
+  padding-right: 15px;
+  position: relative;
+}
+.form_list .b_left .b_error{
+  bottom: -8px;
+}
+.form_list .form-submit{
+  color: #fefefe;
+  text-transform: uppercase;
+  font: 12px Arial;
+  text-align: center;
+  background: url(../images/main_menu_btn.png) repeat-x 0 0;
+  height: 30px;
+  width: 166px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+/* попапы */
+body{
+  position: relative;
+}
+
+.b_shadow{
+  position: absolute;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  background: url(../images/bg_shadow.png) repeat 0 0;
+  background: rgba(222,225,231,0.85);
+}
+.b_popup{
+  background: #55a3e3;
+  width: 330px;
+  position: relative;
+  margin: 18% auto;
+}
+.b_popup h3{
+  color: white;
+  padding: 26px 10px 0 28px;
+}
+.b_popup .form_list li{
+  padding-bottom: 8px;
+  text-align: center;
+}
+.b_popup .form_list{
+  padding-top: 10px;
+}
+.b_popup .form-text,
+.b_popup .form-textarea{
+  border: 1px solid #3388CD;
+  width: 262px;
+}
+.b_popup label{
+   color: white;
+}
+.b_popup .b_errors_block{
+  color: #d30000;
+  background: white;
+  padding: 1px 5px;
+}
+.b_popup .form-submit{
+	background: url(../images/btn_submit.png) repeat-x 0 0;
+	height: 25px;
+	padding: 0 14px 2px;
+	font: 12px Arial;
+	color: #3388cd;
+	font-weight: bold;
+  text-transform: none;
+  width: auto;
+  margin-bottom: 5px;
+}
+.b_popup li .link{
+  color: white;
+}
+.b_popup li .link:first-child{
+  margin-right: 30px;
+}
+.b_popup .jquery-selectbox .jquery-selectbox-currentItem {
+	color: black;
+	font-size: 12px;
+}
+.b_photo_edit{
+  width: 660px;
+}
+.b_photo_edit .form_list{
+  float: left;
+  clear: none;
+  width: 274px;
+}
+.b_photo_edit .form_list li {
+	overflow: visible;
+	text-align: left;
+	min-height: 47px;
+}
+.b_photo_edit .jquery-selectbox{
+	width: 262px;
+}
+.b_photo_edit .jquery-selectbox .jquery-selectbox-list{
+  min-width: 268px;
+}
+.b_photo_edit .b_capcha{
+	width: 272px;
+	height: 57px;
+	padding: 10px 0;
+	background: white;
+	overflow: hidden;
+	text-align: center; 
+	border:1px solid #3388CD;
+	margin-bottom: 5px;
+}
+.b_photo_edit .form-textarea{
+	margin-bottom: 5px;
+}
+.text_center{
+	text-align: center !important;
+}
+.add_photo .b_left{
+	float: left;
+	width: 195px;
+}
+.add_photo .form_list .jquery-selectbox{
+	text-align: left;
+	width: 262px;
+}
+.add_photo .form_list .jquery-selectbox .jquery-selectbox-list{
+  min-width: 268px;
+}
+.add_photo .form_list li:first-child .jquery-selectbox{
+	width: 187px;
+	margin-bottom: 30px;
+}
+.add_photo .form_list li:first-child .jquery-selectbox .jquery-selectbox-list{
+  min-width: 193px;
+}
+.add_photo .b_photo{
+	border: 1px solid white;
+	float: right;
+	width: 58px;
+	height: 39px;
+}
+.add_photo .form_list li{
+	overflow: visible;
+}
+.add_photo .form_list .b_tab_link{
+	height: 26px;
+	clear: both;
+	overflow: hidden;
+	margin-left: -4px;
+	position: relative;
+	width: 285px;
+	margin-top: 2px;
+}
+.add_photo .form_list .b_tab_link a{
+	font-size: 11px;
+	color: white;
+	height: 26px;
+	line-height: 26px;
+	float: left;
+	text-align:center;
+	width: 95px;
+}
+.add_photo .form_list .b_tab_link a.active{
+	background: white;
+	color: #3388cd;
+	text-decoration: none;
+}
+.add_photo .form_list .b_tab_page{
+	background: white;
+	padding: 12px 8px 8px;
+	margin-left: -4px;
+	position: relative;
+	width: 269px;
+	margin-top: -8px;
+}
+.add_photo .form_list .b_tab_page label{
+	color: black;
+	font-size: 11px;
+}
+.add_photo .form_list .b_tab_page .form-text{
+	width: 257px;
+}
+.add_photo .form_list .b_tab_page .b_form_item{
+	padding-bottom: 8px;
+}
+.add_photo .form_list .b_tab_page .form-submit_blue{
+	background: url(../images/main_menu_btn.png) repeat-x 0 50%;
+	color: white;
+}
+.add_photo .form_list .b_tab_page .form-submit_red{
+	background: url(../images/bg_submit_red.png) repeat-x 0 50%;
+	color: white;
+}
+.add_photo .form_list .b_tab_page .close{
+	background: url(../images/small_close.png) no-repeat 50% 50%;
+	display: block;
+	top: 2px;
+	right: 2px;
+	width: 10px;
+	height: 10px;
+	overflow: hidden;
+	position: absolute;
+	cursor: pointer;
+}
+.add_photo .form_list .b_tab_page .link_close{
+	top: auto;
+	right: auto;
+	left: 195px;
+	bottom: 20px;
+	width: auto;
+	background: url(../images/popup_search_close.png) no-repeat 100% 0;
+	font-size: 11px;
+	color: #3388cd;
+	padding-right: 8px;
+	line-height: 11px;
+	height: 11px;
+}
+.form_list .form-text.error, .b_popup .form-textarea.error{
+	border-color: red;
+}
+#btn_upload{
+	float: left;
+	
+}
+
+#btn_upload object {
+	margin-top: 35px;
+	cursor: pointer;
+}
+#btn_upload-button{
+	cursor: pointer;
+}
+/* кабинет */
+
+.cabinet_page{
+	clear: both;
+	margin-bottom: 13px;
+	position: relative;
+}
+.cabinet_page .left_side{
+	background: white;
+	-moz-box-shadow: 0 2px 2px #999;
+	-webkit-box-shadow: 0 2px 2px #999;
+	box-shadow: 0 2px 2px #999;
+	padding: 0px 10px;
+	overflow: hidden;
+	width: 205px;
+	float: left;
+	height: 100%;
+	min-height: 300px;
+	position: absolute;
+}
+.cabinet_page .right_side{
+	background: white;
+	-moz-box-shadow: 0 2px 2px #999;
+	-webkit-box-shadow: 0 2px 2px #999;
+	box-shadow: 0 2px 2px #999;
+	padding: 6px 10px 10px;
+	overflow: hidden;
+	width: 745px;
+	float: right;
+	min-height: 300px;
+}
+.cabinet_page .left_side h3{
+	font: 13px Arial, Helvetica, sans-serif;
+	color: black;
+	border: none;
+	padding-left: 10px;
+	padding-top: 18px;
+}
+.cabinet_page .left_side .cabinet_menu li{
+	clear: both;
+	padding-bottom: 2px;
+	list-style: none;
+	padding: 9px 10px 11px;
+}
+.cabinet_page .left_side .cabinet_menu .sub_menu{
+	clear: both;
+	padding-bottom: 2px;
+	list-style: none;
+	padding: 6px 20px 8px;
+}
+.cabinet_page .left_side .cabinet_menu .sub_menu li{
+	clear: both;
+	padding-bottom: 2px;
+	list-style: none;
+	padding: 9px 10px 4px;
+}
+.cabinet_page .left_side .cabinet_menu a{
+	color: #55a3e3;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.cabinet_page .left_side .cabinet_menu .sub_menu a{
+	color: #55a3e3;
+	font: normal 13px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	text-transform: capitalize;
+}
+.cabinet_page .left_side .cabinet_menu .active > a{
+	color: #505050;
+}
+.cabinet_page .right_side .form_list{
+	padding-top: 23px;
+}
+.cabinet_page .right_side .post_list,
+.cabinet_page .right_side .friends_list{
+	list-style: none;
+	color: #7D7D7D;
+	padding: 28px 15px 20px 17px;
+}
+.cabinet_page .right_side .friends_list{
+	padding: 18px 15px 20px 17px;
+	color: #2f2f2f;
+}
+.cabinet_page .right_side .post_list li{
+	height:20px;
+}
+.cabinet_page .right_side .post_list li,
+.cabinet_page .right_side .friends_list li{
+	
+	clear: both;
+	padding-bottom: 6px;
+	border-bottom: 1px dotted #C3C8D3;
+	font-size: 14px;
+	margin-bottom: 12px;
+	padding-right: 110px;
+	position: relative;
+}
+
+.user_data{
+	float: left;
+}
+
+
+ul.user_data li {
+	
+	list-style-type: none;
+	padding-bottom: 20px!important;
+}
+ul.user_data li a{
+	text-decoration: none;
+	color: #7D7D7D!important;
+	cursor: pointer;
+}
+ul.user_data li a:hover{
+	color:#55A3E3!important;
+}
+ul.user_data li span{
+	display:block;
+	float:left;
+	
+}
+ul.user_data li span.desc{
+	color:#55A3E3!important;
+	width: 240px;
+	font: bold 13px Arial, Helvetica, sans-serif;
+	text-decoration: none;
+}
+
+ul.user_data li.c_last{
+	position: absolute!important;
+	bottom: 0;
+	border:none!important;
+	font-weight:bold;
+
+}
+ul.user_data li.c_last a{
+	border-right: 1px solid #373737;
+	padding: 0 10px;
+}
+.cabinet_page .right_side .post_list li img{
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+}
+.message_text{
+font-family: "PFDinDisplayProMedium", "Myriad Pro", sans-serif;
+font-size: 14px;
+color: #ffffff;
+padding: 2px 0 5px;
+font-weight: normal;
+line-height: 15px;
+margin-bottom: 10px;
+}
+
+.cabinet_page .right_side .friends_list li{
+	padding-right: 20px;
+}
+.cabinet_page .right_side .post_list h2{
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+	display: inline; 
+	float:left;
+}
+.message_controls{
+	float: right;
+	margin-right: 40px;
+}
+.cabinet_page .right_side .post_list .b_date{
+	color: #7D7D7D;
+	font-size: 13px;
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 6px;
+}
+.cabinet_page .right_side .post_list a{
+	text-decoration: none;
+	color: #7D7D7D;
+}
+.cabinet_page .right_side .b_post_text{
+	margin: 14px 20px 14px 10px;
+	overflow: hidden;
+}
+.cabinet_page .right_side img.left{
+	float: left;
+	margin: 8px 28px 20px 0;
+}
+.cabinet_page .right_side p{
+	margin: 0 0 20px;
+	font-size: 14px;
+	line-height: 26px;
+}
+.cabinet_page .right_side .friends_list a{
+	text-decoration: none;
+	color: #2f2f2f;
+}
+/********************** popup_news ***************************/
+
+.b_news_edit{
+  width: 660px;
+}
+.b_news_edit .form_list{
+  float: left;
+  clear: none;
+  width: 274px;
+  overflow: visible;
+}
+.b_news_edit .form_list li {
+	overflow: visible;
+	text-align: left;
+	min-height: 47px;
+}
+.b_news_edit .jquery-selectbox{
+	width: 262px;
+}
+.b_news_edit .jquery-selectbox .jquery-selectbox-list{
+  min-width: 268px;
+}
+.b_news_edit .form-textarea{
+	margin-bottom: 5px;
+	height: 280px;
+}
+.b_news_edit .b_photo_block{
+	background: white;
+	overflow: hidden;
+	padding: 14px 10px;
+}
+.b_news_edit .b_photo_block .b_photo{
+	border: none;
+	width: 158px;
+	height: 120px;
+}
+.b_news_edit .b_photo_block .b_nav{
+	float: right;
+}
+.b_news_edit .b_photo_block .btn{
+	padding: 4px 3px 5px;
+	display: block;
+	text-align: center;
+	width: 80px;
+	font: 12px Arial;
+	color: #3388cd;
+	font-weight: normal;
+	margin-bottom: 5px;
+	background: url(../images/main_menu_btn.png) repeat-x 0 50%;
+	color: white;
+	text-decoration: none;
+}
+.b_news_edit .b_photo_block .btn_add{
+	margin-top: 45px;
+}
+.b_news_edit .b_photo_block .btn_edit{
+	margin-top: 35px;
+}
+.b_news_edit .b_photo_block .btn.red{
+	background: url(../images/bg_submit_red.png) repeat-x 0 50%;
+	color: white;
+}

@@ -1,0 +1,4 @@
+<?php 
+class New_Model extends ORM{
+	protected $has_and_belongs_to_many = array('news_langs');
+}

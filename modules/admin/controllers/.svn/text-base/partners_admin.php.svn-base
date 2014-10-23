@@ -1,0 +1,23 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+class Partners_Admin extends Constructor
+{
+    protected $item_table   = 'partners';
+    protected $orderby      = 'id';
+    protected $order_dir    = 'DESC';
+    protected $use_form     = TRUE;
+    protected $use_logo     = TRUE;
+    protected $logo_path = 'upload/partners/';
+    protected $logo_ext = '.jpg';
+    protected $logo_prefix = '/pic_320';
+   
+    protected $grid_columns = array(
+        "id",
+        "has_logo",
+        "status",
+        "name",
+        "link",
+
+    );
+     
+}

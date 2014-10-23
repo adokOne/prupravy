@@ -1,0 +1,442 @@
+var reload_countries = function(){
+	val = $(this).val();
+	
+	$.ajax({
+		type:'post',
+		dataType: 'json',
+		async: false,
+		url:'/posts/airports/'+val,
+		success: function(data){
+			next_sel = $('#airport')
+			city_sel  = $('#city')
+			next_sel.html('')
+			city_sel.html('')
+			next_sel.append('<option value="">' + translate['select_airport'] + '</option>')
+			city_sel.append('<option value="">' + translate['select_city'] + '</option>')
+
+			$.each(data.airports,function(k,el){
+				next_sel.append('<option value="'+el.id+'">'+el.name+'</option>')
+						
+			})
+			$.each(data.cities,function(k,el){
+				city_sel.append('<option value="'+el.id+'">'+el.name+'</option>')
+						
+			})	
+			next_sel.unselectbox();
+			city_sel.unselectbox();
+			$('.form-select').selectbox();
+		}
+	})
+}
+
+
+$(document).ready(function() {
+	
+
+
+    $.each($.validator.methods, function (key, value) {
+        $.validator.methods[key] = function () {           
+            if(arguments.length > 0) {
+                arguments[0] = $.trim(arguments[0]);
+            }
+
+            return value.apply(this, arguments);
+        };
+    });
+  
+  
+  $('*[data-auto-controller]').each(function() {
+    var plg;
+
+    if ((plg = $(this)['attach' + $(this).data('auto-controller')])) {
+
+      return plg.call($(this));
+    }
+  });
+  
+  
+  $('.login-button').click(function(ev){
+    $.ajax({
+      url: '/user/get_login_form',
+      dataType: 'json',
+      type: 'post',
+      success: function(resp){
+        if(resp.status){
+          $('body').append(resp.html);
+          $("body,html").animate({
+            scrollTop: 160
+          }, 800);
+          $('.b_shadow form').attachLoginController();
+        }
+        else
+          alert('Error!');
+      }
+    });
+  })
+  
+  
+  
+	slide();
+  	var f_search_val = $("#f_search").val();
+  	
+  	$('#f_search').focus(function() {
+  		$(this).val("");
+	});
+	$('#f_search').blur(function() {
+  		$(this).val(f_search_val);
+	});
+	
+	
+	$('.b_rating_stars').rating();
+	
+	
+	$('#country').change( reload_countries );
+	
+	photos_add_controls();
+	comments_slide_init();
+	users_post_slide_init();
+	parntners_slide_init();
+
+
+    $(".b_add_news a").click(function(ev){
+    	ev.preventDefault()
+    	$.ajax({
+    		type:"post",
+    		dataType:"json",
+    		url:"/news/get_add_form",
+    		success:function(resp){
+    			if(resp.success){
+	    			$(".all_page").after(resp.html)
+	    			$("#news_popup").attachNewsAddController()
+    			}
+    			else
+    				$(".b_enter.login-button").click()
+    		}
+    	})
+    })
+
+
+
+
+});
+
+
+
+
+	function str_replace(search, replace, subject) {
+	    return subject.split(search).join(replace);
+	}
+	
+	
+	function users_post_slide_init(){
+		offset = 0
+		stop = false
+		$('.b_choice .b_photo a').click(function(ev){
+			ev.preventDefault()
+			type = $(this).parents('.b_photo').attr('id')
+			
+			if($(this).hasClass('arrow_left') && offset!=0){
+				offset-=1
+				stop = false
+				$('.b_right .b_photo a').css('cursor','pointer');
+			}
+			else if($(this).hasClass('arrow_right') && !stop){
+				offset+=1
+				$('.b_right .b_photo a').css('cursor','pointer');
+			}
+			else{
+				$(this).css('cursor','default');
+				console.log('Больше нету фотографий')
+			}
+			if(!stop && offset!=0)
+				$.ajax({
+					url: '/posts/main_rating_posts/'+offset,
+					type: 'post',
+					dataType: 'json',
+					data: 'type='+type,
+					success: function(data){
+						if(Number(data.total)==offset)
+							stop = true
+						if(Number(data.total)!=offset){
+							$('#'+type).parent().find('h4').html(data.post.name)
+							$('#'+type).parent().find('a.link').html(data.user.name).attr('href','/photos?user_id='+data.user.id)
+							$('#'+type).find('a img').attr('src', data.post.picture);
+						}
+					}
+				})
+				
+		})
+		
+	}
+
+
+
+
+	function parntners_slide_init(){
+		partners  = $('.b_partners a')
+		_index     = 0
+		partners.each(function(i,el){
+			el = $(el)
+			if(i!=0)
+				el.hide()
+		})
+
+		partners_slider = setInterval(function(){
+			if(partners.length==1)
+				return false
+			_index+=1
+			if(_index==1)
+				partners.eq((partners.length-1)).hide('slow')
+			_index == -1 ? (partners.length-1) : _index
+			partners.eq((_index-1)).hide('slow')
+			partners.eq((_index)).show('slow')
+			if(_index==(partners.length-1)){
+				//partners.eq(0).show('slow')
+				_index = -1
+			}
+				
+		}, 4000)
+	}
+
+	function comments_slide_init(){
+		
+		index     = 0
+		comments  = $('.b_last_comments .b_scroll dl')
+		arrow_bot = $('.b_last_comments .bottom_arrow')
+		arrow_top = $('.b_last_comments .top_arrow')
+		comments.each(function(i,el){
+			el = $(el)
+			if(i!=0)
+				el.hide()
+		})
+		slider = setInterval(function(){
+			if(comments.length==1)
+				return false
+			index+=1
+			if(index==1)
+				comments.eq((comments.length-1)).hide('slow')
+			comments.eq((index-1)).hide('slow')
+			comments.eq((index)).show('slow')
+			if(index==(comments.length-1))
+				index = 0
+		}, 4000)
+		
+		arrow_bot.click(function(ev){
+			ev.preventDefault()
+			if(!arrow_bot.is(':visible'))
+				return false
+			clearInterval(slider)
+			index += 1
+			arrow_bot.show()
+			if(index==(comments.length-1)){
+				arrow_bot.hide()
+			comments.eq((index-1)).hide('slow')
+			comments.eq((index)).show('slow')
+				return false
+			}
+			if(!arrow_top.is(':visible'))
+				arrow_top.show()
+			comments.eq((index-1)).hide('slow')
+			comments.eq((index)).show('slow')
+			
+		})
+		arrow_top.click(function(ev){
+			ev.preventDefault()
+			if(!arrow_top.is(':visible'))
+				return false
+			clearInterval(slider)
+			index -= 1
+			arrow_top.show()
+			if(index==0){
+				arrow_top.hide()
+			comments.eq((index+1)).hide('slow')
+			comments.eq((index)).show('slow')
+				return false
+			}
+			if(!arrow_bot.is(':visible'))
+				arrow_bot.show()
+			comments.eq((index+1)).hide('slow')
+			comments.eq((index)).show('slow')
+			
+		})
+		
+	}
+	
+	function slide(){
+		$(".b_lang .select_open").click(function(ev){
+			ev.preventDefault();
+			$(".b_lang .menu").slideToggle();
+		});
+	    $('.b_rules .link').click(function(ev) {
+	    	  ev.preventDefault();
+	          $(this).toggleClass("active");
+	          $('.b_rules ol.list').slideToggle();
+	    });
+	    
+	    $('.new_company .elseco').click(function(ev) {
+	    	$(this).parent().find('ul').slideToggle();
+	    });
+	    
+	    $('.new_plase .elseps').click(function(ev) {
+	    	$(this).parent().find('ul').slideToggle();
+	    });
+	}
+	
+	
+	function photos_add_controls(){
+		
+		
+		$('#choise').click(function(ev){
+			ev.preventDefault()
+			$(this).next('.b_tip_address').show();
+			
+		})
+		
+		$('.b_tip_address').hide()
+		
+		
+		$('#post_type').change(function(ev){
+			$('.b_side.info li').show();
+			$('.b_side.info li').removeClass('presence_post_type');
+			//$('select').removeClass('required')
+			switch ($(this).val()) {
+			  case 'videos':
+				  $('.b_side li').addClass('presence_post_type')
+			    break
+			  case 'pictures':
+				  $('.b_side #comment')
+				  					.parents('li')
+				  					.addClass('presence_post_type')
+				  $('.b_side #submit')
+				  					.parents('li')
+				  					.addClass('presence_post_type')
+				  $('.b_side #day')
+				  					.parents('li')
+				  					.addClass('presence_post_type')		  					
+			    break
+			  case 'photos':
+				  $('.b_side li').addClass('presence_post_type')
+				  //$('select').addClass('required')
+			    break
+			  default :
+				  $('.b_side li').addClass('presence_post_type')
+				  //$('select').addClass('required')
+			}
+			$.each($('.b_side.info li'),function(i,el){
+				if(!$(el).hasClass('presence_post_type')){
+					$(el).hide()
+					
+				} 
+				else{
+					//$(el).find('select').addClass('required')
+				}
+					
+			})
+			
+		});	
+		
+		$('#tech_type').change(function(ev){
+			$('.b_side.info li').show();
+			$('.b_side.info li').removeClass('presence_tech_type');
+			switch ($(this).val()) {
+			  case '1' :
+				  $('.b_side li').addClass('presence_tech_type')
+			    break
+			  case '2' :
+				  $('.b_side #comment,.b_side #plane, .b_side #tech_type,.b_side #day ,.b_side .btn')
+				  					.parents('li')
+				  					.addClass('presence_tech_type')
+				  $('.b_side li.submit-area').addClass('presence_tech_type')
+				  $('.b_tip_address .b_left_side ul li').addClass('presence_tech_type')
+			    break
+			  case '3' :
+				  $('.b_side #comment, .b_side #tech_type, .b_side #day ,.b_side .btn')
+					.parents('li')
+					.addClass('presence_tech_type')
+				  $('.b_side li.submit-area').addClass('presence_tech_type')
+				  $('.b_tip_address .b_left_side ul li').addClass('presence_tech_type')
+			    break
+			  default :
+				  $('.b_side li').addClass('presence_tech_type')
+			}
+			$.each($('.b_side.info li'),function(i,el){
+				if(!$(el).hasClass('presence_tech_type'))
+					$(el).hide()
+			})
+		})
+		
+		$('#company').change(function(){
+			if(Number($(this).val())>0){
+				$(this).parents('li').find('.new_company').hide()
+			}
+			else{
+				$(this).parents('li').find('.new_company').show()
+			}
+		})
+		
+		$('#plane').change(function(){
+			if(Number($(this).val())>0){
+				$(this).parents('li').find('.new_plane').hide()
+			}
+			else{
+				$(this).parents('li').find('.new_plane').show()
+			}
+		})
+		
+		$('#airport').change(function(){
+			if(Number($(this).val())>0){
+				$(this).parents().find('.new_plase').hide()
+			}
+			else{
+				$(this).parents().find('.new_plase').show()
+			}
+		})
+		
+		/*upload_text = $('#upload').html()
+		
+		$('#upload_button').change(function(){
+			if($('#upload').hasClass('btn'))
+				filename = $(this).val();
+				lastIndex = filename.lastIndexOf("\\");
+			if (lastIndex >= 0) {
+				   filename = filename.substring(lastIndex + 1);
+			}
+			$('#upload').html(filename);		
+			
+			$('#upload').removeClass('btn')
+			$('#de_upload').addClass('btn')
+		});
+		$('#de_upload').click(function(){
+			$('#upload_button').val('')
+			$('#upload').addClass('btn')
+			$('#de_upload').removeClass('btn')	
+			$('#upload').html(upload_text);
+		});*/
+		
+		$('.list li .link-clear').click(function(){
+			$('#comment').val('');
+		});
+		
+
+	}
+	
+	$.fn.forwardEvent = function(event) {
+	    this.each(function() {
+	        if (this.dispatchEvent) {
+	            if (event.originalEvent) {
+	                event = event.originalEvent
+	            }
+	            try {
+	                this.dispatchEvent(event);
+	            } catch(error) {
+	                $(this).trigger(event);
+	            }
+	        }
+	        else {
+	            $(this).trigger(event);
+	        }
+	    });
+	    return this;
+	};
+	
+	

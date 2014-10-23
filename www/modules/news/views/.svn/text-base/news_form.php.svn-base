@@ -1,0 +1,50 @@
+<div class="b_shadow" id="news_popup">
+  <form method="POST" action="/news/save_user_news">
+    <div class="b_popup b_news_edit ">
+      <h3><?php echo $lang["news_add"]?></h3>
+      <ul class="form_list">
+        <li>
+          <label><?php echo $lang["news_title"]?></label>
+          <input required="required" type="text" class="form-text" name="title" value="">
+          <input type="hidden" value="" name="image_name" id="image_name" />
+        </li>
+        <li style="margin: 18px 0;">
+          <label><?php echo $lang["photo"]?></label>
+          <div class="b_photo_block">
+            <div class="b_photo">
+              <img width="158" height="120" src="/images/bignews_photo.png" alt="">
+            </div><!-- end b_photo -->
+            <div class="b_nav">
+             <a href="#" id="btn_upload" class="btn btn_add"><?php echo $lang["add"]?></a>
+             <!--
+             <a href="#" class="btn btn_edit">ИЗМЕНИТЬ</a>
+             <a href="#" class="btn red">УДАЛИТЬ</a>
+             -->
+            </div><!-- end b_nav -->
+          </div><!-- end b_photo_block -->
+        </li>
+        <li>
+          <label><?php echo $lang["news_type"]?></label>
+          <select name="type" class="form-select">
+            <?php foreach($types as $k=>$type):?>
+            <option value="<?php echo $k?>">
+                <?php echo $type?>
+            </option>
+            <?php endforeach;?>
+          </select>
+        </li>
+      </ul>
+      <ul class="form_list">
+        <li>
+          <label><?php echo $lang["news_text"]?></label>
+          <textarea required="required" name="text" class="form-textarea">
+          </textarea>
+        </li>
+        <li class="text_center">
+          <input type="submit" class="form-submit" value="<?php echo $lang["send"]?>">
+        </li>
+      </ul>
+      <div class="cc"></div>
+    </div><!-- b_popup -->
+  </form>
+  </div>

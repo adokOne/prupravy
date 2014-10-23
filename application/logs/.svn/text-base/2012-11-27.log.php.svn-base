@@ -1,0 +1,92 @@
+<?php defined('SYSPATH') or die('No direct script access.'); ?>
+
+2012-11-27 11:13:46 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:13:46 +02:00 --- debug: Session Library initialized
+2012-11-27 11:13:46 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:13:46 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:13:46 +02:00 --- debug: Database Library initialized
+2012-11-27 11:13:57 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/videos/2/1.flw, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:13:57 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/2/a_4.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:13:57 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/123/a_22.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:13:57 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/124/a_23.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:14:01 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:26 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:22:26 +02:00 --- debug: Session Library initialized
+2012-11-27 11:22:26 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:22:26 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:22:26 +02:00 --- debug: Database Library initialized
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/2/a_4.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/124/a_23.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/videos/2/1.flw, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/123/a_22.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:27 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:28 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:31 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:22:31 +02:00 --- debug: Session Library initialized
+2012-11-27 11:22:31 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:22:31 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:22:31 +02:00 --- debug: Database Library initialized
+2012-11-27 11:22:31 +02:00 --- debug: Pagination Library initialized
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/1/a_2.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/77/a_7.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/123/a_22.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/75/a_5.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/76/a_6.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/124/a_23.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/2/a_4.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:32 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:33 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:22:33 +02:00 --- debug: Session Library initialized
+2012-11-27 11:22:33 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:22:34 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:22:34 +02:00 --- debug: Database Library initialized
+2012-11-27 11:22:34 +02:00 --- debug: Pagination Library initialized
+2012-11-27 11:22:34 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/1/w_2.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:34 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/ajax-loader.gif, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:34 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:34 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:35 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:22:37 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:22:37 +02:00 --- debug: Session Library initialized
+2012-11-27 11:22:37 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:22:37 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:22:37 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:02 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:24:02 +02:00 --- debug: Session Library initialized
+2012-11-27 11:24:02 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:24:02 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:24:02 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:02 +02:00 --- debug: Pagination Library initialized
+2012-11-27 11:24:02 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/1/w_2.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:03 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/ajax-loader.gif, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:04 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:04 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:04 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:07 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:24:07 +02:00 --- debug: Session Library initialized
+2012-11-27 11:24:07 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:24:07 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:24:07 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:12 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:24:12 +02:00 --- debug: Session Library initialized
+2012-11-27 11:24:12 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:24:12 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:24:12 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:13 +02:00 --- debug: Pagination Library initialized
+2012-11-27 11:24:13 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, upload/photos/1/w_2.jpg, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:13 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/ajax-loader.gif, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:14 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:14 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, images/favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841
+2012-11-27 11:24:16 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:24:16 +02:00 --- debug: Session Library initialized
+2012-11-27 11:24:16 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:24:16 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:24:16 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:25 +02:00 --- debug: Global GET, POST and COOKIE data sanitized
+2012-11-27 11:24:25 +02:00 --- debug: Session Library initialized
+2012-11-27 11:24:25 +02:00 --- debug: Auth Library loaded
+2012-11-27 11:24:25 +02:00 --- debug: MySQL Database Driver Initialized
+2012-11-27 11:24:25 +02:00 --- debug: Database Library initialized
+2012-11-27 11:24:25 +02:00 --- error: Не пойманное PHP Error: Trying to get property of non-object в файле /home/adok/Sites/spotters/trunk/modules/comments/controllers/comments.php, на строке 44
+2012-11-27 11:24:26 +02:00 --- error: Не пойманное Kohana_404_Exception: Запрошенная страница, favicon.ico, не найдена. в файле /home/adok/Sites/spotters/trunk/system/core/Kohana.php, на строке 841

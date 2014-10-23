@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/spotters/!svn/ver/260/trunk/modules/admin/views
+END
+not_found.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/not_found.php
+END
+images_admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/images_admin.php
+END
+admin_login_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/admin_login_form.php
+END
+list_admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/list_admin.php
+END
+module_tree.php
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/module_tree.php
+END
+gallery_admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/spotters/!svn/ver/5/trunk/modules/admin/views/gallery_admin.php
+END
+dashboard.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/17/trunk/modules/admin/views/dashboard.php
+END

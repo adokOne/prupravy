@@ -1,0 +1,52 @@
+select{font-size:11px;}
+
+.image-tip{padding:4px;height:98px;white-space:nowrap;}
+
+.image-tip img {margin-right:10px;border:2px solid #083772;}
+
+.image-tip b{color: #083772;display: block;margin-bottom: 4px;}
+
+.image-tip span{display: block;margin-bottom: 5px;margin-left: 5px;}
+
+#images{background: #fff;font: 11px Arial, Helvetica, sans-serif;}
+
+#images .thumb{background: #dddddd;padding:3px;}
+
+#images .thumb img{border:1px solid white;height: 60px;width: 80px;}
+
+#images .thumb-wrap{float: left;margin: 4px;margin-right: 0;padding: 5px;}
+
+#images .thumb-wrap span{display: block;overflow: hidden;text-align: center;}
+
+#images .x-view-selected .thumb{background:#8db2e3;}
+
+#images .loading-indicator {font-size:8pt;background-image:url(../../resources/images/default/grid/loading.gif);background-repeat: no-repeat;background-position: left;padding-left:20px;margin:10px;}
+
+
+.album-node .x-tree-node-icon, .album-btn{background-image:url(/js/ext/resources/images/default/image--plus.png) !important;}
+
+#folders{position:relative;}
+
+.x-html-editor-tb .x-edit-insertimage .x-btn-text {background:transparent url(/js/ext/resources/images/default/image--plus.png) no-repeat;background-position: 0 0;}
+
+.expand-all .x-menu-item-icon {background-image:url(images/icons/arrow-down.gif);}
+
+.collapse-all .x-menu-item-icon {background-image:url(images/icons/arrow-up.gif);}
+
+
+#custom {
+    cursor:move;
+}
+
+#custom-rzwrap{
+    z-index: 100;
+}
+
+.custom-vline, .custom-hline
+{
+    font-size: 0;
+    position: absolute;
+    background: white url('images/crop.gif') top left repeat;   
+}
+.custom-vline { height: 100%; width: 1px !important; }
+.custom-hline { width: 100%; height: 1px !important; }

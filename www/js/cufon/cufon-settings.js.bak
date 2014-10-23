@@ -1,0 +1,112 @@
+Cufon.replace('#logo', {fontFamily: 'Plumb-Bold'});
+
+
+/* login popup */
+Cufon.replace('#login-popup a.submit', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#forget-popup a.submit', {fontFamily: 'Plumb-Bold'});
+/* banner */
+Cufon.replace('#banner strong', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#banner em', {fontFamily: 'Plumb-Light'});
+Cufon.replace('#bus_promo strong', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#bus_promo em', {fontFamily: 'Plumb-Light'});
+
+/* search */
+Cufon.replace('div.search-footer a.submit', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#teaser strong', {fontFamily: 'Plumb-Regular'});
+
+/* popular */
+Cufon.replace('#popular h2', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('#rail_popular h2', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('#bus_popular h2', {fontFamily: 'Plumb-Regular'});
+/* news */
+Cufon.replace('#news h2', {fontFamily: 'Plumb-Regular'});
+
+/* footer */
+Cufon.replace('#footer h3', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('#footer h4', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#footer .connect .footer_link', {hover: true, fontFamily: 'Plumb-Bold'});
+Cufon.replace('.skype strong', {fontFamily: 'Plumb-Bold'});
+
+/* feedback popup */
+Cufon.replace('#feedback-popup a.submit', {fontFamily: 'Plumb-Bold'});
+
+/* faq find submit*/
+Cufon.replace('.faq a.submit', {fontFamily: 'Plumb-Bold'});
+
+/* steps
+
+Cufon.replace('#steps em', {fontFamily: 'plumb-regular'});
+Cufon.replace('#steps strong', {fontFamily: 'plumb-regular', textShadow: '#333 1px 1px'});
+
+/* cost */
+
+Cufon.replace('div.cost div.price', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('div.cost a', {fontFamily: 'Plumb-Bold'});
+
+/*cabinet*/
+Cufon.replace('div.search_by_num .search_but', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.sms_ins a.submit', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.order_search a.submit', {fontFamily: 'Plumb-Bold'});
+
+/*hotels*/
+Cufon.replace('#banner.hotels_banner strong.summ', {fontFamily: 'Plumb-Regular'});
+
+/*qatar*/
+Cufon.replace('div.search_button a', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.special_proposals_txt', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.new_heading', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.qatar_search_form .heading', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.qatar_trip_info p', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.qatar_trip_info .heading', {fontFamily: 'Plumb-Bold'});
+/* teaser */
+
+/*tours*/
+Cufon.replace('#tours_promo .hotel_name_block', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#tours_promo .price_from', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#tours_promo .include', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('#booking_link', {fontFamily: 'Plumb-Bold'});
+/*end tours*/ 
+
+/*agent*/
+Cufon.replace('.info_col h3', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.register_as div', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.register_as .submit', {fontFamily: 'Plumb-Bold'});
+/*end agent*/
+
+/*new tickets*/
+Cufon.replace('.newsearch_form h1', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.newsearch_form .submit', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.newtickets_main h3', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.round_info span', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.city_maininfo h3', {fontFamily: 'Plumb-Bold'});
+/*end agent*/
+Cufon.replace('.special_proposals_h1', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.agent_count span', {fontFamily: 'Plumb-Bold'});
+/*translate*/
+Cufon.replace('.translate_form h1', {fontFamily: 'Plumb-Regular'});
+
+Cufon.replace('.content_rightcol .travel_block h2', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.content_rightcol .travel_news h2', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.make_changes a', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.make_changes div.price', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.add_appartment_but', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.add_appart_main_but', {fontFamily: 'Plumb-Bold'});
+Cufon.replace('.take_part', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.place_order a', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.app_content h1', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.our_phone', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.corp_clients_banner h3', {fontFamily: 'Plumb-Regular'});
+Cufon.replace('.for_whom', {fontFamily: 'Plumb-Bold'});
+
+Cufon.replace('.trip_block .ins', {fontFamily: 'DisplayPro-Reg'});
+Cufon.replace('.trip_block .trip_date', {fontFamily: 'DisplayPro-Reg'});
+
+Cufon.replace('.preloader_map', {fontFamily: 'DisplayPro-Med'});
+Cufon.replace('.preloader_map i', {fontFamily: 'DisplayPro-Med', fontStyle: 'italic'});
+

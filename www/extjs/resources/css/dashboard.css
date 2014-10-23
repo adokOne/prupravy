@@ -1,0 +1,248 @@
+.ico_logout {
+	background:url(../images/default/control_power.png) no-repeat 0 0 !important;
+}
+
+.ico_user {
+	background:url(../images/default/user_silhouette.png) no-repeat 0 0 !important;
+}
+
+.ico_video {
+	background:url(../images/default/television.png) no-repeat 0 0 !important;
+}
+
+.ico_publications {
+	background:url(../images/default/blog-blue.png) no-repeat 0 0 !important;
+}
+
+.ico_sitesettings { 
+	background: url(../images/default/gear.png) no-repeat 0 0 !important; 
+}
+
+.ico_news {
+	background:url(../images/default/newspaper.png) no-repeat 0 0 !important;
+}
+
+.ico_page {
+	background:url(../images/default/reports.png) no-repeat 0 0 !important;
+}
+
+.ico_group {
+	background:url(../images/default/users.png) no-repeat 0 0 !important;
+}
+
+.ico_users {
+	background:url(../images/default/user-business.png) no-repeat 0 0 !important;
+}
+
+.ico_roles {
+	background:url(../images/default/shield.png) no-repeat 0 0 !important;
+}
+
+.ico_books {
+	background:url(../images/default/books.png) no-repeat 0 0 !important;
+}
+
+.ico_admin {
+	background:url(../images/default/user_silhouette.png) no-repeat 0 0 !important;
+}
+.save {
+	background: url("../images/default/disk.png") no-repeat 0 0 !important;
+}
+.add {
+	background: url("../images/default/document--plus.png") no-repeat 0 0 !important;
+}
+.server_add {
+	background: url("../images/default/server--plus.png") no-repeat 0 0 !important;
+} 
+.option {
+	background: url("../images/default/document--pencil.png") no-repeat 0 0 !important;
+}
+.server_option {
+	background: url("../images/default/server--pencil.png") no-repeat 0 0 !important;
+}
+.remove {
+	background: url("../images/default/document--minus.png") no-repeat 0 0 !important;
+}
+.server_remove {
+	background: url("../images/default/server--minus.png") no-repeat 0 0 !important;
+}
+.cancel {
+    background: url("../images/default/slash.png") no-repeat 0 0 !important;
+}
+.building {
+    background: url("../images/default/building.png") no-repeat 0 0 !important;
+}
+.ico_comments {
+	background:url(../images/default/balloons.png) no-repeat 0 0 !important;
+}
+
+.ico_moderation {
+	background:url(../images/default/traffic-light.png) no-repeat 0 0 !important;
+}
+
+.ico_convert {
+	background:url(../images/default/application-monitor.png) no-repeat 0 0 !important;
+}
+
+.ico_videos {
+	background:url(../images/default/television-image.png) no-repeat 0 0 !important;
+}
+
+.ico_server {
+	background:url(../images/default/servers.png) no-repeat 0 0 !important;	
+}
+
+
+.ico_wall {
+	background:url(../images/default/wall.png) no-repeat 0 0 !important;
+}
+
+.password {
+	background:url(../images/default/key.png) no-repeat 0 3px !important;
+}
+
+
+.monitor {
+	background:url(../images/default/monitor.png) no-repeat 0 3px !important;
+}
+
+.approve {
+    background:url(../images/default/approve.png) no-repeat 0 0 !important;
+}
+
+.ico_approve {
+    background:url(../images/default/approve.png) no-repeat 0 3px !important;
+}
+
+.disapprove {
+    background: url("../images/default/slash.png") no-repeat 0 0 !important;
+}
+
+.delete {
+    background:url(../images/default/delete.png) no-repeat 0 0 !important;
+}
+
+.back {
+    background:url(../images/default/back.png) no-repeat 0 0 !important;
+}
+
+.eraser {
+	background:url(../images/default/eraser.png) no-repeat 0 3px !important;
+}
+
+.plus {
+    background:url(../images/default/plus.png) no-repeat 0 0 !important;
+}
+
+.join {
+    background:url(../images/default/join.png) no-repeat 0 0 !important;
+}
+
+.cities {
+    background:url(../images/default/town.png) no-repeat 0 0 !important;
+}
+
+.ico_join {
+    background:url(../images/default/join.png) no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-addbtn {
+	background:url(../images/default/document--plus.png) no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-removebtn {
+	background: url("../images/default/document--minus.png") no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-resetbtn {
+	background:url(../images/default/broom.png) no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-uploadstartbtn {
+	background:url(../images/default/arrow-090.png) no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-uploadstopbtn {
+	background:url(../images/default/dd/drop-no.gif) no-repeat 0 3px !important;
+}
+
+.ext-ux-uploaddialog-state {
+		text-align: center; background-position: center center; background-repeat: no-repeat;
+}
+
+.ext-ux-uploaddialog-state-0 { background-image: url('../images/default/uncheck.gif'); }
+
+.ext-ux-uploaddialog-state-1 { background-image: url('../images/default/check.gif'); }
+
+.ext-ux-uploaddialog-state-2 { background-image: url('../images/default/failed.gif');}
+ 
+.ext-ux-uploaddialog-state-3 { background-image: url('../images/default/file-uploading.gif'); }
+
+.ico_billing { 
+	background: url(../images/default/mobile-phone--pencil.png) no-repeat 0 0 !important; 
+}
+
+
+.toggle {
+	background:url(../images/default/toggle.png) no-repeat 0 0 !important;
+}
+
+.toggle-collapse {
+	background:url(../images/default/toggle-collapse.png) no-repeat 0 0 !important;
+}
+
+.picture {
+	background:url(../images/default/picture.png) no-repeat 0 3px !important;
+}
+
+
+
+
+
+
+#loading {
+    position: absolute;
+    left: 45%;
+    top: 40%;
+    padding: 2px;
+    z-index: 20001;
+    height: auto;
+    width: 140px;
+}
+
+#loading img {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+#loading .loading-indicator {
+    background: white;
+    border: solid 1px #777;
+    color:#555;
+    font: bold 13px tahoma,arial,helvetica;
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    height: auto;
+} 
+
+
+.x-tab-strip-text.ico_server,
+.x-tab-strip-text.ico_user,
+.x-tab-strip-text.ico_video,
+.x-tab-strip-text.ico_publications,
+.x-tab-strip-text.ico_sitesettings,
+.x-tab-strip-text.ico_news,
+.x-tab-strip-text.ico_page,
+.x-tab-strip-text.ico_group,
+.x-tab-strip-text.ico_users,
+.x-tab-strip-text.ico_admin,
+.x-tab-strip-text.ico_comments,
+.x-tab-strip-text.ico_roles,
+.x-tab-strip-text.ico_moderation,
+.x-tab-strip-text.ico_convert,
+.x-tab-strip-text.ico_videos,
+.x-tab-strip-text.ico_wall,
+.x-tab-strip-text.ico_billing {
+	background-position:0 3px !important;
+}

@@ -1,0 +1,29 @@
+<div class="b_last_comments b_scroll_reklama">
+   <div class="b_scroll">
+     <div class="b_text">
+	   <dl>
+		 <dd>
+		   <a href="#"><h4>KLM Королевские Авиалинии</h4></a>
+		   Авиабилеты: низкие цены, безопасно, просто и удобно! <br />www.klm.ua
+		 </dd>
+	   </dl>
+	    
+	    <dl>
+		 <dd>
+		   <a href="#"><h4>KLM Королевские Авиалинии_2</h4></a>
+		   Авиабилеты: низкие цены, безопасно, просто и удобно! <br />www.klm.ua_2
+		 </dd>
+	   </dl>
+		
+		<dl>
+		 <dd>
+		   <a href="#"><h4>KLM Королевские Авиалинии_3</h4></a>
+		   Авиабилеты: низкие цены, безопасно, просто и удобно! <br />www.klm.ua_3
+		 </dd>
+	   </dl>
+     </div>
+     
+	   <a href="#" class="top_arrow"></a>
+	   <a href="#" class="bottom_arrow"></a>
+   </div>
+</div><!-- end b_last_comments -->

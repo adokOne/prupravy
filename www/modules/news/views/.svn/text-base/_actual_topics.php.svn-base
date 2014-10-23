@@ -1,0 +1,16 @@
+<div class="b_actual">
+	<h3><?php echo $lang['actual_topic_title'] ?> <a href="#" class="link_all"><?php echo $lang['show_all'] ?></a></h3>
+  <ul class="list">
+  	<?php foreach ($topics as $topic){ ?>
+    <li>
+    	<a href="<?php echo '/' . $topic['type'] .'/show/' . $topic['topic_id'] ?>"><h4><?php echo $topic['title'] ?></h4></a>
+    	<?php if( isset( $topic['img_url'] ) && $topic['img_url'] != '' ){ ?>
+    	<br>
+    	<a href="<?php echo '/' . $topic['type'] .'/show/' . $topic['topic_id'] ?>">
+    		<img src="<?php echo $topic['img_url'] ?>" alt="<?php echo $topic['title'] ?>" />
+    	</a>
+    	<?php } ?>
+    </li>
+    <?php } ?>
+  </ul>
+</div>

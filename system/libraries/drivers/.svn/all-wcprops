@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers
+END
+Session.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Session.php
+END
+Captcha.php
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Captcha.php
+END
+Database.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database.php
+END
+Image.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Image.php
+END
+Cache.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Cache.php
+END

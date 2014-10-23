@@ -1,0 +1,11 @@
+<div class="b_telegraph">
+   <h3><?php echo $lang['spott_telegraph_title']?></h3>
+   <ul class="list">
+   	 <?php foreach ($news as $new){ ?>
+     <li>
+      <a href="<?php echo url::base()."news/show/".$new->new_id ?>"><?php echo $new->title ?></a>
+      <span class="b_date"><?php echo date('d.m.Y H:i', strtotime($new->date)) ?></span>
+     </li>
+     <?php } ?>
+   </ul>
+</div>

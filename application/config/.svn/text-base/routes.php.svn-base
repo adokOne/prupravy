@@ -1,0 +1,28 @@
+<?php
+
+$config['_default'] = "pmain/index";
+
+$config['registration'] = "user/register";
+$config['register']     = "user/create_user";
+$config['login']        = "user/login";
+$config['logout']       = "user/logout";
+$config['password_recovery']       = "user/password_recovery";
+
+$config['news/show/([a-z0-9-]+)'] 	= "news/show/$1";
+$config['news/(\d+)'] 	= "news/index/$1";
+$config['posts/(\d+)']	= "posts/index/$1";
+$config['albums']	= "posts/albums";
+$config['photos']	= "posts/photos";
+$config['videos']	= "posts/videos";
+$config['pictures']	= "posts/pictures";
+$config['albums/show/(\d+)']	= "posts/albums_show/$1";
+$config['photos/show/(\d+)']	= "posts/photos_show/$1";
+$config['videos/show/(\d+)']	= "posts/videos_show/$1";
+$config['pictures/show/(\d+)']	= "posts/pictures_show/$1";
+$config['add']	= "posts/add_post";
+$config['photos/(\d+)']	= "posts/photos/$1";
+$config['videos/(\d+)']	= "posts/videos/$1";
+$config['pictures/(\d+)']	= "posts/pictures/$1";
+$config['albums/(\d+)']	= "posts/albums/$1";
+$config['albums/show/(\d+)/photo/(\d+)']	= "posts/album_photo/$1-$2";
+$config['save'] = "posts/save_post";

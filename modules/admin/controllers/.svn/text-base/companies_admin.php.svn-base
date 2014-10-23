@@ -1,0 +1,59 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+class Companies_Admin extends Constructor
+{
+    protected $item_table   = 'companies';
+    protected $orderby      = 'id';
+    protected $order_dir    = 'DESC';
+    protected $use_tree     = FALSE;
+    protected $use_form     = TRUE;
+    protected $use_combo    = FALSE;
+    protected $use_logo     = TRUE;
+    protected $multi_lang   = FALSE;
+    protected $logo_path = 'upload/companies/';
+    protected $logo_ext = '.jpg';
+    protected $logo_prefix = '/pic_320';
+	
+   
+    protected $grid_columns = array(
+        "id",
+    	"status",
+    	"name",
+    	"has_logo",
+    	"(SELECT COUNT(id) FROM planes WHERE company_id = daddy.id) AS planes_count"
+        
+    );
+	
+	public function companies_list() {
+		Database_Core::instance()
+						->select("id", "name")
+						->from("companies");
+		
+    	$result = grid::get(FALSE,"ASC");   
+    	echo $result; 
+    }
+	
+	public function save(){
+		$company_id = $this->input->post('company');
+		
+		if( ( ((int)$company_id) > 0 ) AND ( $company_id != $_POST['id'] ) ){
+			$this->db->update( 'planes',    array( 'companies_id' => $company_id ), array( 'companies_id' => $_POST['id'] ) );
+			$this->db->update( 'posts',     array( 'company_id'   => $company_id ), array( 'company_id'   => $_POST['id'] ) );
+			$this->db->delete( 'companies', array( 'id'   	      => $_POST['id'] ) );
+			
+			$result = Database::instance()
+						->from('companies')
+						->select('id', 'name', 'status', 'has_logo')
+						->where( array( 'id' => $company_id ) )
+						->get();
+			$result = $result[0];
+			
+			$_POST['id'] 	   = $result->id;
+			$_POST['name']     = $result->name;
+			$_POST['status']   = $result->status;
+			$_POST['has_logo'] = $result->has_logo;
+		}
+		
+		parent::save();
+	}
+}

@@ -1,0 +1,125 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/spotters/!svn/ver/104/trunk/system/helpers
+END
+format.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/helpers/format.php
+END
+email.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/spotters/!svn/ver/5/trunk/system/helpers/email.php
+END
+file.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/spotters/!svn/ver/5/trunk/system/helpers/file.php
+END
+valid.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/spotters/!svn/ver/5/trunk/system/helpers/valid.php
+END
+feed.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/spotters/!svn/ver/5/trunk/system/helpers/feed.php
+END
+security.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/helpers/security.php
+END
+arr.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/spotters/!svn/ver/5/trunk/system/helpers/arr.php
+END
+upload.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/helpers/upload.php
+END
+cookie.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/helpers/cookie.php
+END
+form.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/spotters/!svn/ver/5/trunk/system/helpers/form.php
+END
+num.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/spotters/!svn/ver/5/trunk/system/helpers/num.php
+END
+remote.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/5/trunk/system/helpers/remote.php
+END
+download.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/spotters/!svn/ver/5/trunk/system/helpers/download.php
+END
+html.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/spotters/!svn/ver/5/trunk/system/helpers/html.php
+END
+text.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/spotters/!svn/ver/5/trunk/system/helpers/text.php
+END
+date.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/spotters/!svn/ver/104/trunk/system/helpers/date.php
+END
+inflector.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/system/helpers/inflector.php
+END
+request.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/spotters/!svn/ver/5/trunk/system/helpers/request.php
+END
+url.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/spotters/!svn/ver/5/trunk/system/helpers/url.php
+END
+expires.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/spotters/!svn/ver/5/trunk/system/helpers/expires.php
+END

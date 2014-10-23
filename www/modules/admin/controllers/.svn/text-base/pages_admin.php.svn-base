@@ -1,0 +1,53 @@
+<?php defined('SYSPATH') or die('No direct script access.');
+
+class Pages_Admin extends Constructor
+{
+	protected $item_table   = 'pages';
+	protected $orderby      = 'id';
+	protected $order_dir    = 'ASC';
+	protected $multi_lang   = TRUE;
+	protected $use_form     = False;
+	protected $use_map      = FALSE;
+
+	protected $grid_columns = array(
+			"id",
+	        "status",
+			"(SELECT title FROM pages_langs WHERE id_lang=0 AND page_id = daddy.id) AS page_name"
+	);
+
+	protected $lang_field = array(
+			"meta_desc",
+			"title",
+			"meta_keywords",
+			'text',
+			'seo_name'
+	);
+
+
+	public function edit_page(){
+		$id  = $this->input->post('id');
+		$this->index(true);
+		$dat = implode(",",$this->grid_columns);
+		$data = $this->db->query("SELECT ".$dat." FROM ".$this->item_table." AS daddy WHERE id=".$id);
+		foreach ($data as $k=>$v)
+			foreach ($v as $key=>$value)
+			$n->$key=$value;
+
+		echo json_encode(array($n));
+	}
+
+	public function index($type=false){
+		$fileds = "";
+		foreach ($this->langs as $k=>$v)
+			foreach ($this->lang_field as $f)
+			$fileds .= '"'.$f.'_'.$k.'",';
+		$fileds .= '"id",';
+		$fileds .= '"status"';
+		if(!$type)
+			parent::index();
+		$this->view->fileds = $fileds;
+
+	}
+	 
+}
+

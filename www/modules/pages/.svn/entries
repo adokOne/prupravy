@@ -1,0 +1,43 @@
+10
+
+dir
+267
+https://172.27.0.221:8443/svn/spotters/trunk/modules/pages
+https://172.27.0.221:8443/svn/spotters
+
+
+
+2012-08-29T14:43:07.210361Z
+12
+taras
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6d09f36c-9dac-4754-a639-ac0fa7c9f9b0
+
+views
+dir
+
+i18n
+dir
+
+models
+dir
+
+config
+dir
+
+controllers
+dir
+

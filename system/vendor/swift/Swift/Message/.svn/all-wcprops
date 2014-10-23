@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message
+END
+EmbeddedFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/EmbeddedFile.php
+END
+Headers.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Headers.php
+END
+Image.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Image.php
+END
+MimeException.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/MimeException.php
+END
+Encoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Encoder.php
+END
+Attachment.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Attachment.php
+END
+Part.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Part.php
+END
+Mime.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/spotters/!svn/ver/5/trunk/system/vendor/swift/Swift/Message/Mime.php
+END

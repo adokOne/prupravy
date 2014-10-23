@@ -1,0 +1,244 @@
+<?php 
+class News_Controller extends Controller {
+	 public function __construct(){
+		parent::__construct();
+		$this->config = Kohana::config('news.news');
+	 }
+	
+	 function index( $page = FALSE ){
+	 	javascript::add(
+	 		array(
+	 			"jNice2",
+	 			"fileuploader.min",
+	 			"controllers/news_add_controller",
+	 			)
+	 		);
+	 	$page = ($page) ? ((int)$page -1) : 0 ;
+		
+		$news = Database::instance()
+					->from('news')
+					->join('news_langs','news_langs.news_id','news.id')
+					->join('users','users.id','news.user_id')
+					->select('news.id as new_id', 'news.date', 'news_langs.text', 'news_langs.title', 'users.id as user_id', 'users.username')
+					->where( array( 'news_langs.id_lang' => $this->lang_id, 'news.status' => 1) )
+					->offset($this->config['count_per_page'] * $page)
+					->limit($this->config['count_per_page'])
+					->orderby('news.date', 'desc')
+					->get();
+		
+		$pagination_config = array(
+							    "base_url"   	  => "/",
+							    "uri_segment"     => "news",
+							    "total_items"     =>  $this->db->count_last_query(),
+							    "items_per_page"  =>  $this->config['count_per_page'],
+							    'style'           => "spotters",
+							);
+		
+		$view 			  = new View('news_index');
+		$view->pagination = new Pagination($pagination_config);
+		$view->news 	  = $news;
+		$view->render(true);
+		
+		// $comments = $this->db->selecet()->from('commnets')->where(array('type'=>'news','status'=>1))->get();
+		// $this->db->count_last_query();
+	 }
+		
+	 public function show( $new_id ){
+
+			javascript::add(array(
+				'controllers/comments_controller'
+			));	
+
+
+		$info = Database::instance()
+					->from('news')
+					->join('news_langs','news_langs.news_id','news.id')
+					->select('news.id as news_id', 'news.date', 'news.views_count', 'news_langs.title', 'news_langs.text')
+					->where( array( 'news_langs.id_lang' => $this->lang_id, 'news.id' => $new_id ) )
+					->get()
+					->current();
+		
+		$view 		= new View('news_show');
+		$view->info = $info;
+		$view->render(true);
+	 }
+	
+	 public function main_news(){
+	 	$view 		= new View('_news_main');
+	 	$view->lang = Kohana::lang('news.news');
+		$view->news = $this->_get_last_news('base', $this->config['last_news_count']);
+	 	$view->render(true);
+	 }
+	 
+	 public function telegraph_news(){
+	 	$view 		= new View('_telegraph_on_main');
+		$view->lang = Kohana::lang('news.news');
+		$view->news = $this->_get_last_news('telegraph', $this->config['last_telegraph_count']);
+	 	$view->render(true);
+	 }
+	 
+	 public function actual_topics(){
+	 	$view 		  = new View('_actual_topics');
+		$view->lang   = Kohana::lang('news.news');
+		$view->topics = $this->_get_actual_topics($this->config['actual_topics_count']);
+		$view->render(true);
+	 }
+	 
+	 public function news_reklama(){
+	 	$view = new View('_news_reklama');
+		$view->render(true);
+	 }
+	 
+	 private function _get_actual_topics( $count ){
+	 	$actual_topics = ( Database::instance()
+					->select( 'actual_topics.type', 'actual_topics.item_id' )
+					->from('actual_topics')
+					->where( array( 'actual_topics.status' => '1' ) )
+					->offset(0)
+					->limit( $count )
+					->orderby('id', 'desc')
+					->get()
+				  );
+		
+		$topics = array();
+		
+		foreach ($actual_topics as $tp){
+			switch ($tp->type) {
+			    case 'photo':
+			        $topic = ( Database::instance()
+						->select( 'pictures.name', 'pictures.post_id as id' )
+						->from('pictures')
+						->where( array( 'pictures.id' => $tp->item_id ) )
+						->get()
+						->current()
+					);
+			        if( !empty($topic->id) ){
+						$topics[] = array( 'type'       => 'photos',
+										   'item_id'    => $tp->item_id,
+										   'topic_id'   => $topic->id,
+										   'title'      => $topic->name,
+										   'img_url' 	=> '/upload/photos/' . $topic->id . '/a_' . $tp->item_id . '.jpg'
+										 );
+			        }
+			        break;
+					
+			    case 'video':
+			        $topic = ( Database::instance()
+						->select( 'videos.name', 'videos.post_id as id' )
+						->from('videos')
+						->where( array( 'videos.id' => $tp->item_id ) )
+						->get()
+						->current()
+					);
+			        if( !empty($topic->id ) ){
+							$topics[] = array( 'type'       => 'videos',
+										   'item_id'    => $tp->item_id,
+										   'topic_id'   => $topic->id,
+										   'title'      => $topic->name,
+										   'img_url' 	=> '/upload/videos/' . $topic->id . '/' . $tp->item_id . '.flw'
+										 );
+				        }
+					break;
+					
+			    case 'album':
+			        $topic = ( Database::instance()
+						->select( 'albums.name', 'albums.id' )
+						->from('albums')
+						->where( array( 'albums.id' => $tp->item_id ) )
+						->get()
+						->current()
+					);
+					$alb_pic = ( Database::instance()
+						->select( 'pictures.id as picture_id', 'post_albums.post_id' )
+						->from('post_albums')
+						->join( 'pictures','pictures.post_id','post_albums.post_id' )
+						->where( array( 'post_albums.album_id' => $topic->id ) )
+						->get()
+						->current()
+					);
+					
+					$topics[] = array( 'type'       => 'albums',
+									   'item_id'    => $tp->item_id,
+									   'topic_id'   => $topic->id,
+									   'title'      => $topic->name,
+									   'img_url' 	=> !empty($alb_pic)?'/upload/photos/' . $alb_pic->post_id . '/a_' . $alb_pic->picture_id . '.jpg':''
+									 );
+			        break;
+					
+				case 'news':
+			        $topic = ( Database::instance()
+						->select( 'news.id', 'news_langs.id as news_id', 'news_langs.title as name' )
+						->from('news')
+						->join( 'news_langs','news_langs.news_id','news.id' )
+						->where( array( 'news_langs.id_lang' => $this->lang_id, 'news.id' => $tp->item_id ) )
+						->get()
+						->current()
+					);
+					$topics[] = array( 'type'       => $tp->type,
+									   'item_id'    => $topic->news_id,
+									   'topic_id'   => $topic->id,
+									   'title'      => $topic->name,
+									   'img_url'    => ''
+									 );
+			        break;
+			}
+		}
+		
+		return $topics;
+	 }
+
+
+	 public function get_add_form(){
+	 	$view = new View("news_form");
+	 	$view->lang  = Kohana::lang("main.main");
+	 	$view->types = Kohana::lang("main.news_types");
+	 	echo json_encode(array("success"=>$this->logged_in,"html"=>$view->render(false)));
+	 }
+
+	public function upload_image(){
+		$extensions = array("jpeg", "png", "gif" , "jpg");
+		$uploader   = new Uploader($extensions);
+		$result     = $uploader->handleUpload(DOCROOT.'/upload/tmp');
+		echo htmlspecialchars(json_encode($result), ENT_NOQUOTES);
+	}
+
+
+	 public function save_user_news(){
+	 	$name = mysql_real_escape_string(trim($this->input->post("title","",true)));
+	 	$text = mysql_real_escape_string(trim($this->input->post("text","",true)));
+	 	$news = ORM::factory("news");
+	 	$news->type = $this->input->post("type","telegraph",true);
+		$news->user_id = $this->user->id;
+		$news->date = date("Y-m-d H:i",time());
+		$news->save();
+		$lang = ORM::factory("news_lang");
+		$lang->news_id =$news->id;
+		$lang->title = $name;
+		$lang->text  = $text;
+		$lang->id_lang = $this->lang_id;
+		$lang->save();
+		echo json_encode(array("status"=>true,"text"=>Kohana::lang("main.main.news_added_text")));
+		if(!is_null($this->input->post("image_name",null,true)) || $this->input->post("image_name",null,true) != ""){
+				$this->save_image($news->id);
+		}
+
+	 }
+	public function save_image($id){
+		$file = DOCROOT.'/upload/tmp/'.$this->input->post('image_name');
+		MOJOUser::processAvatar($file , $id,true,'upload/news_images/');
+		
+	}
+	 private function _get_last_news( $type, $count ){
+	 	return ( Database::instance()
+					->from('news')
+					->join('news_langs','news_langs.news_id','news.id')
+					->join('users','users.id','news.user_id')
+					->select('news.id as new_id', 'news.date', 'news_langs.title', 'users.id as user_id', 'users.username')
+					->where( array( 'news_langs.id_lang' => $this->lang_id, 'news.status' => 1, 'news.type' => $type ) )
+					->offset(0)
+					->limit( $count )
+					->orderby('news.date', 'desc')
+					->get()
+				);
+	 }
+}

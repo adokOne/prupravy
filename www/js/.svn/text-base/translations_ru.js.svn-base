@@ -1,0 +1,14 @@
+var translate = new Array();
+
+translate['fill_form_autofill'] = 'Введиде данные для автозаполнения';
+translate['Error'] = 'Ошибка!';
+translate['select_airport'] = 'Выберите Аэропорт';
+translate['select_city'] = 'Выберите город';
+translate['select_file_type'] = 'Выберите тип файла';
+translate['select_media_type'] = 'Выберите Тип фотографии / видео';
+translate['select_file'] = 'Выберите файл';
+translate['select_object_type'] = 'Выберите тип летательного аппарата';
+translate['select_company'] = "Выберите авиакомпанию";
+translate['select_place'] = "Выберите место сьемки";
+translate['required_field'] = "Поле не может быть пустым";
+translate['select_country'] = "Выберите страну";

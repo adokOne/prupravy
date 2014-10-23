@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/spotters/!svn/ver/5/trunk/modules/auth/config
+END
+auth.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/spotters/!svn/ver/5/trunk/modules/auth/config/auth.php
+END
+routes.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/spotters/!svn/ver/5/trunk/modules/auth/config/routes.php
+END

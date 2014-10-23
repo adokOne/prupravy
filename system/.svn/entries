@@ -1,0 +1,58 @@
+10
+
+dir
+267
+https://172.27.0.221:8443/svn/spotters/trunk/system
+https://172.27.0.221:8443/svn/spotters
+
+
+
+2013-03-21T09:49:26.245796Z
+267
+vitalik
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+6d09f36c-9dac-4754-a639-ac0fa7c9f9b0
+
+libraries
+dir
+
+vendor
+dir
+
+views
+dir
+
+i18n
+dir
+
+mp3
+dir
+
+helpers
+dir
+
+config
+dir
+
+controllers
+dir
+
+core
+dir
+
+fonts
+dir
+

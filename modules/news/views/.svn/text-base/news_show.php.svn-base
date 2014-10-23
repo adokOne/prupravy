@@ -1,0 +1,59 @@
+<?php include Kohana::find_file('views','header'); ?>
+	<div class="left_side">
+        <?php widget::render('news', 'news_reklama') ?>
+        <div class="b_news_open post_comment_item" data-post-id="<?php echo $info->news_id ?>" data-post-type="news">
+          <div class="top_header">
+            <?php echo date('d M, Y', strtotime($info->date)) ?> <!-- <a href="#">Eduard Onyshchenko</a> -->
+          </div>
+
+          <div class="b_text">
+            <h1><?php echo $info->title ?></h1>
+            <?php if(file_exists(DOCROOT."/upload/news_images/".$info->news_id."/pic_320.jpg")):?>
+            <img style="float: left;margin-right: 10px;" src="<?php echo "/upload/news_images/".$info->news_id."/pic_320.jpg" ?>">
+          <?php endif;?>
+            <?php echo $info->text ?>
+          </div>
+          
+          <div class="count_public">Просмотров: <?php echo $info->views_count ?> </div>
+          
+          <?php widget::render('pmain', 'like_list') ?>
+        </div>
+        
+        <?php widget::render('comments', 'item_comments', $info->news_id."-news") ?>
+        
+     </div><!-- end left_side -->
+     <div class="right_side">
+        
+		<?php widget::render('news', 'main_news')?>
+		
+        <!-- end b_forum_last -->
+         <div class="b_photo_nespotters">
+           <h3>Фоторепортажи <a href="#" class="link_all">все фото</a></h3>
+           <div class="b_photo">
+              <img src="../../images/photo.jpg" alt="" />
+            </div>
+            <h4>Antonov An-71</h4>
+            <a href="#" class="link">Eduard Onyshchenko</a>
+            <ul class="list">
+              <li>
+                <a href="#">
+                  <img src="../../images/img_random_01.jpg" alt="" />
+                  <h4>Antonov An-71</h4>
+                  <span>Igor Petrushchenkov</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="../../images/img_random_01.jpg" alt="" />
+                  <h4>Antonov An-71</h4>
+                  <span>Igor Petrushchenkov</span>
+                </a>
+              </li>
+            </ul>
+         </div><!-- end b_reg_avia -->
+     </div><!-- end right_side -->
+     <div class="cc"></div>
+
+     <div class="b_empty"></div>
+     
+<?php include Kohana::find_file('views','footer'); ?>

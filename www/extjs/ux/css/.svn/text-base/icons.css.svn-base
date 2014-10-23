@@ -1,0 +1,101 @@
+.add {
+    background-image:url(icons/add.gif) !important;
+}
+
+.edit {
+    background-image:url(icons/edit.gif) !important;
+}
+
+.remove {
+    background-image:url(icons/remove.gif) !important;
+}
+
+.save {
+    background-image:url(icons/save.gif) !important;
+}
+
+.images {
+    background:url("icons/images.png") no-repeat scroll 0 0 transparent !important;
+}
+
+.refresh {
+    background-image:url(../../resources/images/default/grid/refresh.gif) !important;
+}
+
+.expand-all {
+    background-image:url(icons/expand-all.gif) !important;
+}
+
+.collapse-all {
+    background-image:url(icons/collapse-all.gif) !important;
+}
+
+.check-all {
+    background-image:url(icons/check-all.gif) !important;
+}
+
+.uncheck-all {
+    background-image:url(icons/uncheck-all.gif) !important;
+}
+
+.zoom {
+    background-image:url(icons/zoom.gif) !important;
+}
+
+.cancel {
+    background-image:url(icons/slash.gif) !important;
+}
+
+.password {
+    background:url(icons/key.png) no-repeat 0 0 !important;
+}
+
+/* Modules icons */
+
+.ico_logout {
+    background:url(icons/modules/control_power.png) no-repeat 0 3px !important;
+}
+
+.ico_user {
+    background:url(icons/modules/user_silhouette.png) no-repeat 0 0 !important;
+}
+
+.ico_video {
+    background:url(icons/modules/television.png) no-repeat 0 0 !important;
+}
+
+.ico_publications {
+    background:url(icons/modules/blog-blue.png) no-repeat 0 0 !important;
+}
+
+.ico_sitesettings { 
+    background: url(icons/modules/gear.png) no-repeat 0 0 !important; 
+}
+
+.ico_news {
+    background:url(icons/modules/newspaper.png) no-repeat 0 0 !important;
+}
+
+.ico_page {
+    background:url(icons/modules/reports.png) no-repeat 0 0 !important;
+}
+
+.ico_group {
+    background:url(icons/modules/users.png) no-repeat 0 0 !important;
+}
+
+.ico_users {
+    background:url(icons/modules/user-business.png) no-repeat 0 0 !important;
+}
+
+.ico_roles {
+    background:url(icons/modules/shield.png) no-repeat 0 0 !important;
+}
+
+.ico_books {
+    background:url(icons/modules/books.png) no-repeat 0 0 !important;
+}
+
+.ico_admin {
+    background:url(icons/modules/user_silhouette.png) no-repeat 0 0 !important;
+} 

@@ -1,0 +1,66 @@
+<?php
+
+class Main_Controller extends Controller {
+
+	function index() {
+				Database_Core::instance()
+								->select("countries.id","name")
+								->from("countries_lang")
+								->where("id_lang",1)
+								->join("countries", 'countries.id','countries_lang.country_id');
+    	$result = grid::get(FALSE,"ASC");   
+    	echo $result; 
+	}
+
+	function message_box(){
+		$id         = str_replace('_','',$this->input->post('id'));
+		$message    = Database::instance()->from('message_box')->where('id',$id)->get()->current();
+		$view       = new View ('alert');
+		$view->text = $message->text;
+		$view->head = $message->head;
+		echo json_encode(array('message'=>'ok','html'=>$view->render()));
+	}
+	
+	public function test(){
+		$id_lang = intval($this->input->post("id_lang")) > 0 ? $this->input->post("id_lang") : Kohana::config("core.default_lang") ;
+		Database_Core::instance()
+								->select("id_lang","city.id","name")
+								->from("city_lang")
+								->where("id_lang",$id_lang)
+								->join("city", 'city.id','city_lang.city_id');
+    	$result = grid::get(FALSE,"ASC");   
+    	echo $result; 
+    	#var_dump($result);
+	}
+
+	
+	public function import(){
+		$newDB = Database::instance();
+		$oldDB = new Database ( array(	'benchmark'     => TRUE,
+											'persistent'    => FALSE,
+											'connection'    => array
+											(
+												'type'     => 'mysql',
+												'user'     => 'devuser',
+												'pass'     => 'devuser',
+												'host'     => 'localhost',
+											
+												'port'     => FALSE,
+												'socket'   => FALSE,
+												'database' => 'spottres_old'
+											),
+											'character_set' => 'utf8',
+											'table_prefix'  => '',
+											'object'        => TRUE,
+											'cache'         => FALSE,
+											'escape'        => TRUE) );
+		echo 'db init;';
+		
+		$sql = 'select * from files';
+		$data = $oldDB->query($sql);
+		foreach( $data  as $row ){
+			echo $row->RegNum;
+		}
+	}
+
+}

@@ -1,0 +1,28 @@
+	{
+        tooltip:'Добавить',
+        iconCls:'add',
+        disabled:false,
+        id:'itemsAdd',
+        handler:itemsAdd
+    }, {
+        tooltip:'Удалить выделенные',
+        iconCls:'remove',
+        disabled:true,
+        id:'itemsRemove',
+        handler:itemsRemove
+    }, {
+        tooltip:'Сохранить изменения',
+        iconCls:'save',
+        disabled:true,
+        id:'itemsSave',        
+        handler:itemsSave
+    },{
+        tooltip:'Страны',
+        iconCls:'ico_wall',
+        disabled:false,
+        id:'Get_Country',
+        handler:Get_Country
+    }
+
+
+

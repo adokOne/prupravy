@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database
+END
+Mysqli.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database/Mysqli.php
+END
+Pdosqlite.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database/Pdosqlite.php
+END
+Pgsql.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database/Pgsql.php
+END
+Mssql.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database/Mssql.php
+END
+Mysql.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/spotters/!svn/ver/5/trunk/system/libraries/drivers/Database/Mysql.php
+END

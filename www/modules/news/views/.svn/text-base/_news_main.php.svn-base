@@ -1,0 +1,11 @@
+<div class="b_forum_last">
+   <h3><?php echo $lang['main_news']?></h3>
+   <ul class="list">
+   	 <?php foreach ($news as $new){ ?>
+     <li>
+      <?php echo $new->title ?>
+      <span class="b_date"><a href="#"><?php echo $new->username ?></a>, <?php echo date('d.m.Y H:i', strtotime($new->date)) ?></span>
+     </li>
+     <?php } ?>
+   </ul>
+</div>

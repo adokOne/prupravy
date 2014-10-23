@@ -1,0 +1,196 @@
+<?php include Kohana::find_file('views','header'); ?>
+
+	<div class="left_side">
+		<?php #widget::render('news', 'news_reklama') ?>
+		
+        <div class="b_news_open b_telegraph">
+          <h3>споттерский телеграф (НОВОСТИ)</h3>
+          
+          <?php foreach ($news as $new){ ?>
+          	<div class="top_header">
+          		<?php echo date('d M, Y', strtotime($new->date)) ?> <!-- <a href="#">Eduard Onyshchenko</a> -->
+          	</div>
+          	
+          	<div class="b_text">
+	          <h1><a href="<?php echo url::base()."news/show/".$new->new_id ?>"><?php echo $new->title ?></a></h1>
+            <?php if(file_exists(DOCROOT."/upload/news_images/".$new->new_id."/pic_320.jpg")):?>
+            <img style="float: left;margin-right: 10px;" src="<?php echo "/upload/news_images/".$new->new_id."/pic_320.jpg" ?>">
+            <?php endif;?>
+	          <?php echo $new->text ?>
+	        </div>
+          <?php } ?>
+          
+          <?php echo $pagination->render() ?>
+          
+        </div>
+     </div><!-- end left_side -->
+     <div class="right_side">
+        <div class="b_add_news">
+          <a href="#" class="b_btn">Добавить Новость / событие</a>
+        </div>
+         
+         <?php widget::render('news', 'main_news')?>
+         
+         <div class="b_photo_nespotters">
+           <h3>Фоторепортажи <a href="#" class="link_all">все фото</a></h3>
+           <div class="b_photo">
+              <img src="images/photo.jpg" alt="" />
+            </div>
+            <h4>Antonov An-71</h4>
+            <a href="#" class="link">Eduard Onyshchenko</a>
+            <ul class="list">
+              <li>
+                <a href="#">
+                  <img src="images/img_random_01.jpg" alt="" />
+                  <h4>Antonov An-71</h4>
+                  <span>Igor Petrushchenkov</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img src="images/img_random_01.jpg" alt="" />
+                  <h4>Antonov An-71</h4>
+                  <span>Igor Petrushchenkov</span>
+                </a>
+              </li>
+            </ul>
+         </div>
+         <div class="b_forum_last">
+           <h3>ПОСЛЕДНЕЕ НА ФОРУМЕ <a class="link_all" href="#">форум</a></h3>
+           <ul class="list">
+             <li>
+              Ресстр Аэросвит
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Аэропорты в Германии
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Стоп! Снято! (Авиация в кино)
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Аэропорт Киев, развитие инфраструктуры.
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Неформатные ФОТО
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Sun n Fun 2012: Lakeland, Florida
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Перемещенное с сайта (неформат)
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Перемещенное с сайта (неформат)
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+           </ul>
+         </div>
+         <div class="b_forum_last">
+           <h3>Расписание событий <a class="link_all" href="#">форум</a></h3>
+           <ul class="list">
+             <li>
+              Ресстр Аэросвит
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Аэропорты в Германии
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Стоп! Снято! (Авиация в кино)
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Аэропорт Киев, развитие инфраструктуры.
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Неформатные ФОТО
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Sun n Fun 2012: Lakeland, Florida
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Перемещенное с сайта (неформат)
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+             <li>
+              Со споттинга, но не самолеты
+              <span class="b_date"><a href="#">Eduard Onyshchenko</a>, 8.04.2012 14:39</span>
+             </li>
+           </ul>
+         </div>
+         <div class="b_forum_last b_cal">
+           <h3><a href="#" class="prev"></a>Июнь 2012<a href="#" class="next"></a></h3>
+           <table class="t_cal">
+             <tr>
+               <th>Пн</th>
+               <th>Вт</th>
+               <th>Ср</th>
+               <th>Чт</th>
+               <th>Пт</th>
+               <th>Сб</th>
+               <th>Вс</th>
+             </tr>
+             <tr>
+               <td><a href="#"></a></td>
+               <td><a href="#"></a></td>
+               <td><a href="#"></a></td>
+               <td><a href="#"></a></td>
+               <td class="deactive"><a href="#">1</a></td>
+               <td class="deactive"><a href="#">2</a></td>
+               <td class="deactive"><a href="#">3</a></td>
+             </tr>
+             <tr>
+               <td><a href="#">4</a></td>
+               <td><a href="#">5</a></td>
+               <td><a href="#">6</a></td>
+               <td><a href="#">7</a></td>
+               <td><a href="#">8</a></td>
+               <td><a href="#">9</a></td>
+               <td><a href="#">10</a></td>
+             </tr>
+             <tr>
+               <td><a href="#">11</a></td>
+               <td><a href="#">12</a></td>
+               <td><a href="#">13</a></td>
+               <td><a href="#">14</a></td>
+               <td><a href="#">15</a></td>
+               <td><a href="#">16</a></td>
+               <td><a href="#">17</a></td>
+             </tr>
+             <tr>
+               <td><a href="#">18</a></td>
+               <td><a href="#">19</a></td>
+               <td><a href="#">20</a></td>
+               <td><a href="#">21</a></td>
+               <td><a href="#">22</a></td>
+               <td><a href="#">23</a></td>
+               <td><a href="#">24</a></td>
+             </tr>
+             <tr>
+               <td><a href="#">25</a></td>
+               <td><a href="#">26</a></td>
+               <td><a href="#">27</a></td>
+               <td><a href="#">28</a></td>
+               <td class="deactive"><a href="#">29</a></td>
+               <td class="deactive"><a href="#">30</a></td>
+               <td><a href="#"></a></td>
+             </tr>
+           </table>
+         </div>
+     </div><!-- end right_side -->
+     <div class="cc"></div>
+
+     <div class="b_empty"></div>
+     
+<?php include Kohana::find_file('views','footer'); ?>
